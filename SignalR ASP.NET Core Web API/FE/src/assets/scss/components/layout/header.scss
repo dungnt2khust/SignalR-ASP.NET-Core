@@ -1,0 +1,10 @@
+$color: #12007D;
+
+.header {
+    width: 100%;
+    background-color: $color;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}

@@ -1,0 +1,20 @@
+@font-face {
+    font-family: "SquidGame";
+    src: url('../fonts/SquidGame.ttf');
+}
+@font-face {
+    font-family: "Notosans-Bold";
+    src: url('../fonts/notosans-bold.woff2');
+}
+@font-face {
+    font-family: "Notosans-Italic";
+    src: url('../fonts/notosans-italic.woff2');
+}
+@font-face {
+    font-family: "Notosans-Regular";
+    src: url('../fonts/notosans-regular.woff2');
+}
+@font-face {
+    font-family: "Notosans-Semibold";
+    src: url('../fonts/notosans-semibold.woff2');
+}

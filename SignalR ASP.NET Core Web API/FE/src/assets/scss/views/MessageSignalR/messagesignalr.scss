@@ -1,0 +1,39 @@
+.message-signalr {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    padding: 10px;
+    .message-signalr__main {        
+        padding: 10px;
+        border-radius: 8px;
+        background-color: #999;
+        height: 100%;
+        input {
+            border-radius: 4px;
+            font-size: 14px;
+            padding-left: 4px;
+            height: 24px;
+            outline: none; 
+        }
+        .message-signalr__name {
+            width: 100px;
+        }
+        .message-signalr__message {
+            width: 500px;
+        }
+        .message-signalr__send {
+            padding: 4px 10px;
+            min-width: 100px;
+            background-color: bisque;
+            border-radius: 4px;
+            transition: all 0.2s ease;
+            &:hover {
+                cursor: pointer;
+                background-color: rgb(253, 212, 161);
+            }
+        }
+        .message-signalr__list {
+            list-style: none;
+        }
+    }
+}

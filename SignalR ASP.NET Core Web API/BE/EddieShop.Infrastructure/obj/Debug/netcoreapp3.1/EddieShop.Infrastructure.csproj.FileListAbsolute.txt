@@ -1,0 +1,24 @@
+C:\Workspace\HUST\20211\Tài liệu 20211\7. Project III - Thầy Trần Hải Anh\EddieShop\2. SourceCode\2. EddieShop.BackEnd\EddieShop\EddieShop.Infrastructure\bin\Debug\netcoreapp3.1\EddieShop.Infrastructure.deps.json
+C:\Workspace\HUST\20211\Tài liệu 20211\7. Project III - Thầy Trần Hải Anh\EddieShop\2. SourceCode\2. EddieShop.BackEnd\EddieShop\EddieShop.Infrastructure\bin\Debug\netcoreapp3.1\EddieShop.Infrastructure.dll
+C:\Workspace\HUST\20211\Tài liệu 20211\7. Project III - Thầy Trần Hải Anh\EddieShop\2. SourceCode\2. EddieShop.BackEnd\EddieShop\EddieShop.Infrastructure\bin\Debug\netcoreapp3.1\EddieShop.Infrastructure.pdb
+C:\Workspace\HUST\20211\Tài liệu 20211\7. Project III - Thầy Trần Hải Anh\EddieShop\2. SourceCode\2. EddieShop.BackEnd\EddieShop\EddieShop.Infrastructure\bin\Debug\netcoreapp3.1\EddieShop.Core.dll
+C:\Workspace\HUST\20211\Tài liệu 20211\7. Project III - Thầy Trần Hải Anh\EddieShop\2. SourceCode\2. EddieShop.BackEnd\EddieShop\EddieShop.Infrastructure\bin\Debug\netcoreapp3.1\EddieShop.Core.pdb
+C:\Workspace\HUST\20211\Tài liệu 20211\7. Project III - Thầy Trần Hải Anh\EddieShop\2. SourceCode\2. EddieShop.BackEnd\EddieShop\EddieShop.Infrastructure\obj\Debug\netcoreapp3.1\EddieShop.Infrastructure.csproj.AssemblyReference.cache
+C:\Workspace\HUST\20211\Tài liệu 20211\7. Project III - Thầy Trần Hải Anh\EddieShop\2. SourceCode\2. EddieShop.BackEnd\EddieShop\EddieShop.Infrastructure\obj\Debug\netcoreapp3.1\EddieShop.Infrastructure.AssemblyInfoInputs.cache
+C:\Workspace\HUST\20211\Tài liệu 20211\7. Project III - Thầy Trần Hải Anh\EddieShop\2. SourceCode\2. EddieShop.BackEnd\EddieShop\EddieShop.Infrastructure\obj\Debug\netcoreapp3.1\EddieShop.Infrastructure.AssemblyInfo.cs
+C:\Workspace\HUST\20211\Tài liệu 20211\7. Project III - Thầy Trần Hải Anh\EddieShop\2. SourceCode\2. EddieShop.BackEnd\EddieShop\EddieShop.Infrastructure\obj\Debug\netcoreapp3.1\EddieShop.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Workspace\HUST\20211\Tài liệu 20211\7. Project III - Thầy Trần Hải Anh\EddieShop\2. SourceCode\2. EddieShop.BackEnd\EddieShop\EddieShop.Infrastructure\obj\Debug\netcoreapp3.1\EddieShop.Infrastructure.csproj.CopyComplete
+C:\Workspace\HUST\20211\Tài liệu 20211\7. Project III - Thầy Trần Hải Anh\EddieShop\2. SourceCode\2. EddieShop.BackEnd\EddieShop\EddieShop.Infrastructure\obj\Debug\netcoreapp3.1\EddieShop.Infrastructure.dll
+C:\Workspace\HUST\20211\Tài liệu 20211\7. Project III - Thầy Trần Hải Anh\EddieShop\2. SourceCode\2. EddieShop.BackEnd\EddieShop\EddieShop.Infrastructure\obj\Debug\netcoreapp3.1\EddieShop.Infrastructure.pdb
+C:\Workspace\ASP.NET\ASP.NET Core Web API\BE\EddieShop.Infrastructure\bin\Debug\netcoreapp3.1\EddieShop.Infrastructure.deps.json
+C:\Workspace\ASP.NET\ASP.NET Core Web API\BE\EddieShop.Infrastructure\bin\Debug\netcoreapp3.1\EddieShop.Infrastructure.dll
+C:\Workspace\ASP.NET\ASP.NET Core Web API\BE\EddieShop.Infrastructure\bin\Debug\netcoreapp3.1\EddieShop.Infrastructure.pdb
+C:\Workspace\ASP.NET\ASP.NET Core Web API\BE\EddieShop.Infrastructure\bin\Debug\netcoreapp3.1\EddieShop.Core.dll
+C:\Workspace\ASP.NET\ASP.NET Core Web API\BE\EddieShop.Infrastructure\bin\Debug\netcoreapp3.1\EddieShop.Core.pdb
+C:\Workspace\ASP.NET\ASP.NET Core Web API\BE\EddieShop.Infrastructure\obj\Debug\netcoreapp3.1\EddieShop.Infrastructure.csproj.AssemblyReference.cache
+C:\Workspace\ASP.NET\ASP.NET Core Web API\BE\EddieShop.Infrastructure\obj\Debug\netcoreapp3.1\EddieShop.Infrastructure.AssemblyInfoInputs.cache
+C:\Workspace\ASP.NET\ASP.NET Core Web API\BE\EddieShop.Infrastructure\obj\Debug\netcoreapp3.1\EddieShop.Infrastructure.AssemblyInfo.cs
+C:\Workspace\ASP.NET\ASP.NET Core Web API\BE\EddieShop.Infrastructure\obj\Debug\netcoreapp3.1\EddieShop.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Workspace\ASP.NET\ASP.NET Core Web API\BE\EddieShop.Infrastructure\obj\Debug\netcoreapp3.1\EddieShop.Infrastructure.csproj.CopyComplete
+C:\Workspace\ASP.NET\ASP.NET Core Web API\BE\EddieShop.Infrastructure\obj\Debug\netcoreapp3.1\EddieShop.Infrastructure.dll
+C:\Workspace\ASP.NET\ASP.NET Core Web API\BE\EddieShop.Infrastructure\obj\Debug\netcoreapp3.1\EddieShop.Infrastructure.pdb

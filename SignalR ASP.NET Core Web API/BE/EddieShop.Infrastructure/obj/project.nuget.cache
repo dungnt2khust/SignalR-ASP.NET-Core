@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "bSIiYJSJmUCjKbUxvccTA5R7NNkQmU9GU3vkXwjeqSQP8btZPnB0Kn+/aTfZp/I6xkqs0nVpdGANpLVsvxeQWg==",
+  "success": true,
+  "projectFilePath": "C:\\Workspace\\ASP.NET\\ASP.NET Core Web API\\BE\\EddieShop.Infrastructure\\EddieShop.Infrastructure.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\dungg\\.nuget\\packages\\dapper\\2.0.90\\dapper.2.0.90.nupkg.sha512",
+    "C:\\Users\\dungg\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\5.0.0\\microsoft.extensions.configuration.abstractions.5.0.0.nupkg.sha512",
+    "C:\\Users\\dungg\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.0\\microsoft.extensions.primitives.5.0.0.nupkg.sha512",
+    "C:\\Users\\dungg\\.nuget\\packages\\mysqlconnector\\1.3.14\\mysqlconnector.1.3.14.nupkg.sha512",
+    "C:\\Users\\dungg\\.nuget\\packages\\npgsql\\5.0.10\\npgsql.5.0.10.nupkg.sha512",
+    "C:\\Users\\dungg\\.nuget\\packages\\system.reflection.emit.lightweight\\4.7.0\\system.reflection.emit.lightweight.4.7.0.nupkg.sha512",
+    "C:\\Users\\dungg\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.6.0\\system.runtime.compilerservices.unsafe.4.6.0.nupkg.sha512"
+  ],
+  "logs": []
+}

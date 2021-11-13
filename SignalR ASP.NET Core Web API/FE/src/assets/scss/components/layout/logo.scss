@@ -1,0 +1,17 @@
+$color: rgba(255,255,255, 0.9);
+
+.logo {
+    color: $color;
+    display: flex;
+    padding: 10px;
+    .logo__icon {
+        font-size: 40px;
+        margin-right: 10px;
+    }
+    .logo__shop-name {
+        font-family: SquidGame;
+        font-size: 40px;
+        letter-spacing: 2px;
+        
+    }
+}

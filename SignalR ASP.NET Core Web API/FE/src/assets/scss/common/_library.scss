@@ -1,0 +1,115 @@
+// Flex
+.fx-r {
+    display: flex;
+}
+.fx-s-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+@mixin fxCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.fx-center {
+    @include fxCenter; 
+}
+
+// Position
+.pos-relative {
+    position: relative;
+}
+.pos-sticky {
+    position: sticky;
+}
+.pos-absolute {
+    position: sticky;
+}
+
+
+// Icons
+@mixin setIcon {
+    @for $size from 4 to 32 {
+        @if $size % 2 == 0 {
+            .#{'mi-' +  $size} {
+                @include fxCenter;
+                width: $size + px;
+                height: $size + px;
+            }
+        } 
+    } 
+}
+@include setIcon;
+
+// Padding
+@mixin setPaddingAll {
+    @for $size from 2 to 50 {
+        .#{'p-' +  $size} {
+            padding: $size + px;
+        }
+        .#{'p-r-' +  $size} {
+            padding-right: $size + px;
+        }
+        .#{'p-l-' +  $size} {
+            padding-left: $size + px;
+        }
+        .#{'p-t-' +  $size} {
+            padding-top: $size + px;
+        }
+        .#{'p-b-' +  $size} {
+            padding-bottom: $size + px;
+        }
+    } 
+}
+@include setPaddingAll;
+
+// Margin 
+@mixin setMarginAll {
+    @for $size from 2 to 50 {
+        .#{'m-' +  $size} {
+            margin: $size + px;
+        }
+        .#{'m-r-' +  $size} {
+            margin-right: $size + px;
+        }
+        .#{'m-l-' +  $size} {
+            margin-left: $size + px;
+        }
+        .#{'m-t-' +  $size} {
+            margin-top: $size + px;
+        }
+        .#{'m-b-' +  $size} {
+            margin-bottom: $size + px;
+        } 
+    } 
+}
+@include setMarginAll;
+
+// Rotate
+@mixin setRotateAll {
+    @for $size from 0 to 361 {
+        @if $size % 15 == 0 {
+            .#{'rotate-' +  $size} {
+                transform: rotate($size + deg);
+            }
+            .#{'rotate--' + $size} {
+                transform: rotate(-$size + deg);
+            }
+        } 
+    } 
+}
+@include setRotateAll;
+
+// Transition
+@mixin setTransition($transition_name, $duration) {
+    .#{$transition_name} {
+        transition: all linear;
+        transition-duration: $duration + s;
+    }
+}
+@include setTransition(transition-0\.1, 0.1);
+@include setTransition(transition-0\.2, 0.2);
+@include setTransition(transition-0\.3, 0.3);
+@include setTransition(transition-0\.4, 0.4);
+@include setTransition(transition-0\.5, 0.5);
