@@ -2,7 +2,7 @@
   <div class="content">
     <div class="message-signalr">
       <div class="message-signalr__main" @keydown.enter="send">
-        <ul class="message-signalr__list" >
+        <ul class="message-signalr__list defaultScrollbar" >
           <li class="message-signalr__item" v-for="(message, index) in messages" :key="index">
             <span class="username">{{message.user}}</span>
             <span class="userid-admin">{{message.userID ? message.userID : "All"}}</span>
@@ -60,7 +60,11 @@ export default {
   },
   mounted() {
     this.connection.on("ReceiveMessage", (user, message, userID) => {
-        this.messages.push({user, message, userID})
+        this.messages.push({user, message, userID});
+        this.$nextTick(() => {
+          var lastMessage = this.$refs.listMessages.querySelector('li:last-child');
+          lastMessage.scrollIntoView();
+        });
     });
   }
 };
