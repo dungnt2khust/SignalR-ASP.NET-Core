@@ -2,16 +2,15 @@
   <div class="content">
     <div class="message-signalr">
       <div class="message-signalr__main" @keydown.enter="send">
-        <ul ref="listMessages" class="message-signalr__list defaultScrollbar" >
-          <li class="message-signalr__item" v-for="(message, index) in messages" 
-          :class="{'item--other': message.userID != userID}" :key="index">
+        <ul class="message-signalr__list" >
+          <li class="message-signalr__item" v-for="(message, index) in messages" :key="index">
             <span class="username">{{message.user}}</span>
+            <span class="userid-admin">{{message.userID ? message.userID : "All"}}</span>
             <span class="message">{{message.message}}</span>
           </li>
         </ul>
         <div class="message-signalr__input">
-          <span class="userid">UserID: {{userID}}</span>
-          <input class="message-signalr__name" type="text" :readonly="readonlyName ? true : false" v-model="name" placeholder="Name" />
+          <input class="message-signalr__name" type="text" :readonly="readonlyName ? true : false" v-model="userID" placeholder="UserID" />
           <input class="message-signalr__message" type="text" v-model="message" placeholder="Message" />
           <button class="message-signalr__send" @click="send">Send</button>
         </div> 
@@ -24,14 +23,14 @@
 const signalR = require("@aspnet/signalr");
 
 export default {
+  name: "Admin",
   data() {
     return {
       readonlyName: false,
-      name: "",
       message: "",
       connection: "",
       messages: [],
-      userID: Math.round(Math.random()*10)
+      userID: ""
     };
   },
   methods: {
@@ -42,7 +41,7 @@ export default {
         this.readonlyName = false;
       }
       this.connection
-        .invoke("SendMessage", this.name, this.message, this.userID)
+        .invoke("SendMessageSpecialUser", this.userID, this.message)
         .catch(error => {
           console.log(error);
         });
@@ -61,20 +60,11 @@ export default {
   },
   mounted() {
     this.connection.on("ReceiveMessage", (user, message, userID) => {
-      if (user == "ADMIN" && (userID == this.userID || !userID))  {
-        this.messages.push({user, message, userID: -1});
-      } else if (user != "ADMIN") {
-        this.messages.push({user, message, userID});
-      }
-
-      this.$nextTick(() => {
-        var lastMessage = this.$refs.listMessages.querySelector('li:last-child');
-        lastMessage.scrollIntoView();
-      });
+        this.messages.push({user, message, userID})
     });
   }
 };
 </script>
 <style lang="scss">
-  @import "@/assets/scss/views/MessageSignalR/messagesignalr.scss";
+@import "@/assets/scss/views/MessageSignalR/messagesignalr.scss";
 </style>

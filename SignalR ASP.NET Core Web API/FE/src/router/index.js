@@ -5,6 +5,7 @@ import Order from '@/views/Order/Order.vue'
 import Cart from '@/views/Cart/Cart.vue'
 import Product from '@/views/Product/Product.vue'
 import MessageSignalR from '@/views/MessageSignalR/MessageSignalR.vue'
+import Admin from '@/views/Admin/Admin'
 
 Vue.use(Router)
 
@@ -16,6 +17,7 @@ export default new Router({
         {path: '/Order', component: Order},
         {path: '/Cart', component: Cart},
         {path: '/Product', component: Product},
-        {path: '/MessageSignalR', component: MessageSignalR}
+        {path: '/MessageSignalR', component: MessageSignalR},
+        {path: '/Admin', component: Admin}
     ]
 })

@@ -1,19 +1,35 @@
+
+@import "@/assets/scss/common/_library.scss";
+
 .message-signalr {
     display: flex;
     justify-content: center;
     height: 100%;
-    padding: 10px;
+    padding: 20px; 
     .message-signalr__main {        
-        padding: 10px;
+        padding: 20px;
         border-radius: 8px;
         background-color: #999;
-        height: 100%;
-        input {
+        height: 100%; 
+        display: flex;
+        flex-flow: column;
+        overflow: auto;
+        .message-signalr__input {
+            input {
+                border-radius: 4px;
+                font-size: 14px;
+                padding-left: 4px;
+                height: 24px;
+                outline: none; 
+            }
+        }
+        .userid {
+            padding: 0 4px;
+            display: block;
+            width: fit-content;
+            background-color: #fff;
             border-radius: 4px;
-            font-size: 14px;
-            padding-left: 4px;
-            height: 24px;
-            outline: none; 
+            margin-bottom: 10px;
         }
         .message-signalr__name {
             width: 100px;
@@ -31,9 +47,60 @@
                 cursor: pointer;
                 background-color: rgb(253, 212, 161);
             }
-        }
+        } 
         .message-signalr__list {
             list-style: none;
+            padding-top: 20px;
+            flex: 1;
+            background-color: rgba(135, 158, 222, 0.664);
+            margin-bottom: 10px;
+            border-radius: 8px;
+            border: 2px solid rgba(0, 0, 0, 0.1);
+            .message-signalr__item {
+                padding: 4px 20px;
+                display: flex;
+                justify-content: flex-end;
+                .username {
+                    background-color: blue;
+                    padding: 4px 12px;
+                    border-top-left-radius: 16px;
+                    border-bottom-left-radius: 16px;
+                    color: rgba(255, 255, 255, 0.808);
+                    font: {
+                        family: Notosans-Semibold;
+                        size: 16px;
+                    }
+                    margin-right: 2px;
+                }
+                .userid-admin {
+                    background-color: rgba(255, 251, 0, 0.795);
+                    padding: 4px 12px;
+                    color: rgba(15, 9, 9, 0.808);
+                    font: {
+                        family: Notosans-Semibold;
+                        size: 16px;
+                    }
+                    margin-right: 2px;
+                }
+                .message {
+                    background-color: rgba(0, 0, 255, 0.466);
+                    padding: 4px 12px;
+                    border-top-right-radius: 16px;
+                    border-bottom-right-radius: 16px;
+                    color: rgba(255, 255, 255, 0.801);
+                    font-family: Notosans-Regular;
+                } 
+                &.item--other {
+                    justify-content: flex-start;
+                    .message {
+                        background-color: rgba(220, 20, 60, 0.637);
+                    }
+                    .username {
+                        background-color: crimson;
+                    }
+                }
+            } 
         }
     }
 }
+

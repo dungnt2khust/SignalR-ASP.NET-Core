@@ -113,3 +113,31 @@
 @include setTransition(transition-0\.3, 0.3);
 @include setTransition(transition-0\.4, 0.4);
 @include setTransition(transition-0\.5, 0.5);
+
+// ScrollBar
+@mixin SetScrollBar ($className, $width, $bgTrack, $bgThumb, $bgThumbHover, $brTrack, $brThumb, $brThumbHover) {
+    .#{$className} {
+        overflow: auto;
+        /* width */
+        &::-webkit-scrollbar {
+            width: $width + px;
+        }
+        /* Track */
+        &::-webkit-scrollbar-track {
+            background: $bgTrack;
+            border-radius: $brTrack + px;
+        }
+        /* Handle */
+        &::-webkit-scrollbar-thumb {
+            background: $bgThumb;
+            border-radius: $brThumb + px;
+        }
+        /* Handle on hover */
+        &::-webkit-scrollbar-thumb:hover {
+            background: $bgThumbHover;
+            border-radius: $brThumbHover + px;
+        }        
+    }  
+} 
+// Default ScrollBar
+@include SetScrollBar(defaultScrollbar, 10, #f1f1f1, #888, #555, 4, 4, 0);

@@ -1,23 +1,18 @@
 <template lang="">
     <div class="navbar">
-        <div v-for="(navbar, index) in navBarData" @click="navBarItemClick(index)" class="navbar__item" :key="index">
-            {{ navbar }}
+        <div v-for="(navbar, index) in navbarData" @click="navBarItemClick(index)" class="navbar__item" :key="index">
+            {{ navbar.Title }}
         </div>
     </div>
 </template>
 <script>
+import NavbarData from "@/layouts/menu/menu.js"
+
 export default {
     name: "NavBar",
     data() {
-        return {
-            navBarData: [
-                'Trang chủ',
-                'Đơn hàng',
-                'Giỏ hàng',
-                'Chăm sóc khách hàng',
-                'Bảo trì',
-                'ChatHub'
-            ]
+        return { 
+            navbarData: NavbarData
         }
     },
     methods: {
@@ -28,12 +23,7 @@ export default {
          */
         navBarItemClick(index) {
             // this.$popup.confirmDelete(this.navBarData[index]);
-            if (index == this.navBarData.length - 1) {
-                this.$router.push('MessageSignalR');
-            }
-            if (index == 0) {
-                this.$router.push('Home');
-            }
+            this.$router.push(this.navbarData[index].Path);
         }
     }
 }
