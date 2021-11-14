@@ -7,17 +7,34 @@ import setting from '../static/setting.js'
 // Plugin: Sử dụng chung
 import plugin from './plugin/plugin.js'
 
+// SignalR: Kết nối realtime
+import SignalR from './signalr/signalR.js'
+
 // Integrated: Tích hợp
-import router from '@/router'
+import router from './router'
 import i18n from '@/i18n/i18n.js'
 
 /* eslint-disable no-new */
-new Vue({
+const app = new Vue({
   el: '#app',
   setting,
   plugin,
+  SignalR,
   router,
   i18n,
   components: { App },
-  template: '<App/>'
-})
+  template: '<App/>',
+  data: {contentLoading: false}
+});
+
+// Thêm content-loading khi chuyển routing
+router.beforeEach((to, from, next) => {
+  app.contentLoading = true;
+  next()
+});
+
+router.afterEach(() => {
+  app.contentLoading = false;
+});
+
+

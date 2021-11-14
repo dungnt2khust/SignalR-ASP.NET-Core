@@ -25,6 +25,7 @@ namespace EddieShop.Controller.API.Controllers
             _baseService = baseService;
         }
         #endregion
+        
         #region Method
 
         #region GetAll
@@ -305,6 +306,47 @@ namespace EddieShop.Controller.API.Controllers
                 {
                     return StatusCode(204);
                 }
+            }
+            catch (Exception ex)
+            {
+                var errorObj = new ServiceResult();
+
+                errorObj.Success = false;
+                errorObj.Msg = ResourceVN.Exception_ErrorMsg;
+                errorObj.DevMsg = ex.Message;
+                errorObj.Code = "Eddie-001";
+                errorObj.MoreInfo = "https://openapi.Eddie.com.vn/errorcode/Eddie-001";
+                errorObj.TraceId = "ba9587fd-1a79-4ac5-a0ca-2c9f74dfd3fb";
+
+                return StatusCode(500, errorObj);
+            }
+        }
+        #endregion
+
+        #region UpdateColumns
+        /// <summary>
+        /// Chỉnh sửa theo Id một số cột
+        /// </summary>
+        /// <param name="entityId">Id</param>
+        /// <param name="data">Thông tin muốn thay đổi</param>
+        /// <returns></returns>
+        /// CreatedBy: NTDUNG(17/8/2021)
+        [HttpPut("UpdateColumns/{entityId}")]
+        public IActionResult UpdateColumns(Guid entityId, UpdateColumns<TEntity> updateColumns)
+        {
+            try
+            {
+                var serviceResult = _baseService.UpdateColumns(updateColumns.Entity, entityId, updateColumns.Columns);
+                if (serviceResult.Success)
+                {
+
+                    return Ok(serviceResult);
+                }
+                else
+                {
+                    return BadRequest(serviceResult);
+                }
+
             }
             catch (Exception ex)
             {

@@ -51,12 +51,17 @@ namespace EddieShop.Controller.API
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "EddieShop", Version = "v1" });
             });
+
+            // Định dạng Json trả về các controller
             services.AddControllers().AddJsonOptions(options =>
             {
                 options.JsonSerializerOptions.PropertyNamingPolicy = null;
+            });  
+            // Định dạng Json trả về các signalR
+            services.AddSignalR()
+            .AddJsonProtocol(options => {
+                options.PayloadSerializerOptions.PropertyNamingPolicy = null;
             });
-
-            services.AddSignalR();
 
             // Repository DI
             services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));
@@ -97,11 +102,11 @@ namespace EddieShop.Controller.API
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
-                endpoints.MapHub<ChatHub>("/hub/chat");
+                endpoints.MapHub<SignalRHub>("/hub/chat");
             });
             app.UseSignalR(routes =>
             {
-                routes.MapHub<ChatHub>("/hub/chat");
+                routes.MapHub<SignalRHub>("/hub/chat");
             });
 
             app.UseHttpsRedirection();

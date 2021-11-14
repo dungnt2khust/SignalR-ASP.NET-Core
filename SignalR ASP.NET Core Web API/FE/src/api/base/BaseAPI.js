@@ -1,9 +1,7 @@
-import axios from "axios";
 import BaseAPIConfig from './BaseAPIConfig.js'
 
 export default class BaseAPI {
 	constructor() {
-		this.baseApiUrl = "https://localhost:44350/api/v1/";
 	}
 
 	controller = "";

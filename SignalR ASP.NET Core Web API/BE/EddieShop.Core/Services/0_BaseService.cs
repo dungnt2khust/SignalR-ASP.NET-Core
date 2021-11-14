@@ -2,6 +2,7 @@
 using EddieShop.Core.Interfaces.Base;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using static EddieShop.Core.Attributes.EddieShopAttributes;
 
@@ -88,7 +89,8 @@ namespace EddieShop.Core.Services
             {
                 //Validate dữ liệu
                 //Validate chung
-                var serviceResult = ValidateData(entity, "ADD");
+                List<string> emptyArr = new List<string>();
+                var serviceResult = ValidateData(entity, "ADD", emptyArr);
                 if (!serviceResult.Success)
                 {
                     return serviceResult;
@@ -132,7 +134,8 @@ namespace EddieShop.Core.Services
             {
                 //Validate dữ liệu
                 //Validate chung
-                var serviceResult = ValidateData(entity, "UPDATE");
+                List<string> emptyArr = new List<string>();
+                var serviceResult = ValidateData(entity, "UPDATE", emptyArr);
                 if (!serviceResult.Success)
                 {
                     return serviceResult;
@@ -165,15 +168,25 @@ namespace EddieShop.Core.Services
         /// </summary>
         /// <param name="entity"></param>
         /// <param name="mode"></param>
+        /// <param name="columns"></param>
         /// <returns></returns>
         /// CreatedBy: NTDUNG(07/10/2021)
-        public ServiceResult ValidateData(TEntity entity, string mode)
+        /// ModifiedBy: NTDUNG (14/11/2021)
+        public ServiceResult ValidateData(TEntity entity, string mode, List<string> columns)
         {
             var serviceResult = new ServiceResult();
             var properties = entity.GetType().GetProperties();
             foreach (var property in properties)
             {
                 var propName = property.Name;
+
+                // Trong trường hợp cập nhật một số cột thì chỉ cần validate những cột đó
+                if (mode == "UPDATE")
+                {
+                    var checkColumn = columns.Contains(propName);
+                    if (!checkColumn) continue;
+                }
+
                 var propValue = property.GetValue(entity);
                 var propEddieDislayName = property.GetCustomAttributes(typeof(EddieDisplayName), true);
 
@@ -315,6 +328,47 @@ namespace EddieShop.Core.Services
             }
             catch (Exception)
             {
+                throw;
+            }
+        }
+        #endregion
+
+        #region UpdateColumns
+        /// <summary>
+        /// Cập nhật theo các cột
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <param name="entityId"></param>
+        /// <param name="columns"></param>
+        /// <returns></returns>
+        /// CreatedBy: NTDUNG (14/11/2021)
+        public ServiceResult UpdateColumns(TEntity entity, Guid entityId, List<String> columns)
+        {
+            try
+            {
+                //Validate dữ liệu
+                //Validate chung
+                var serviceResult = ValidateData(entity, "UPDATE", columns);
+                if (!serviceResult.Success)
+                {
+                    return serviceResult;
+                }
+                //Thêm dữ liệu
+                var rowEffects = _baseRepository.UpdateColumns(entity, entityId, columns);
+                serviceResult.Data = new
+                {
+                    rowEffects = rowEffects,
+                };
+                if (rowEffects > 0)
+                    serviceResult.Msg = Resources.ResourceVN.Success_Update;
+                else
+                    serviceResult.Msg = Resources.ResourceVN.Fail_Update;
+
+                return serviceResult;
+            }
+            catch (Exception)
+            {
+
                 throw;
             }
         }

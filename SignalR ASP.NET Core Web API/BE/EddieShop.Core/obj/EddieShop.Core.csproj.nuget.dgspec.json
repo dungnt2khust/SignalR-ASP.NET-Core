@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Workspace\\ASP.NET\\ASP.NET Core Web API\\BE\\EddieShop.Core\\EddieShop.Core.csproj": {}
+    "C:\\Workspace\\ASP.NET\\SignalR-ASP.NET-Core\\SignalR ASP.NET Core Web API\\BE\\EddieShop.Core\\EddieShop.Core.csproj": {}
   },
   "projects": {
-    "C:\\Workspace\\ASP.NET\\ASP.NET Core Web API\\BE\\EddieShop.Core\\EddieShop.Core.csproj": {
+    "C:\\Workspace\\ASP.NET\\SignalR-ASP.NET-Core\\SignalR ASP.NET Core Web API\\BE\\EddieShop.Core\\EddieShop.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Workspace\\ASP.NET\\ASP.NET Core Web API\\BE\\EddieShop.Core\\EddieShop.Core.csproj",
+        "projectUniqueName": "C:\\Workspace\\ASP.NET\\SignalR-ASP.NET-Core\\SignalR ASP.NET Core Web API\\BE\\EddieShop.Core\\EddieShop.Core.csproj",
         "projectName": "EddieShop.Core",
-        "projectPath": "C:\\Workspace\\ASP.NET\\ASP.NET Core Web API\\BE\\EddieShop.Core\\EddieShop.Core.csproj",
+        "projectPath": "C:\\Workspace\\ASP.NET\\SignalR-ASP.NET-Core\\SignalR ASP.NET Core Web API\\BE\\EddieShop.Core\\EddieShop.Core.csproj",
         "packagesPath": "C:\\Users\\dungg\\.nuget\\packages\\",
-        "outputPath": "C:\\Workspace\\ASP.NET\\ASP.NET Core Web API\\BE\\EddieShop.Core\\obj\\",
+        "outputPath": "C:\\Workspace\\ASP.NET\\SignalR-ASP.NET-Core\\SignalR ASP.NET Core Web API\\BE\\EddieShop.Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\dungg\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -360,6 +360,7 @@ namespace EddieShop.Infrastructure.Repository
             }
         }
         #endregion
+        
         #region GetFilterPaging
         /// <summary>
         /// Lọc và phân trang
@@ -456,6 +457,79 @@ namespace EddieShop.Infrastructure.Repository
                 expandoDict.Add(propertyName, propertyValue);
         }
         #endregion
+
+        #region UpdateColumns
+        /// <summary>
+        /// Cập nhật theo các cột
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <param name="entityId"></param>
+        /// <param name="columns"></param>
+        /// <returns></returns>
+        /// CreatedBy: NTDUNG (14/11/2021) 
+        public int UpdateColumns(TEntity entity, Guid entityId, List<string> columns)
+        {
+            MySqlConnection mySqlConnection = null;
+            IDbTransaction transaction = null;
+            var rowEffects = -1;
+
+            try
+            {
+                mySqlConnection = new MySqlConnection(_connectionString);
+                mySqlConnection.Open();
+                transaction = mySqlConnection.BeginTransaction();
+
+                var queryLine = new List<string>();
+                DynamicParameters dynamicParameters = new DynamicParameters();
+                var properties = entity.GetType().GetProperties();
+                foreach (var property in properties)
+                {
+                    // Nếu thuộc tính không cần thêm vào thì bỏ qua
+                    if (property.IsDefined(typeof(EddieNotMap), false)) continue;
+
+                    var propName = property.Name;
+                    // Kiểm tra có thuộc colums gửi lên không
+                    var checkColumn = columns.Contains(propName);
+                    if (!checkColumn) continue;
+
+                    var propValue = property.GetValue(entity);
+                    // Gán Id cũ
+                    if (propName.Equals($"{_className}ID") && property.PropertyType == typeof(Guid))
+                    {
+                        propValue = entityId;
+                    }
+                    // Bổ sung ngày chỉnh sửa
+                    if (propName == "ModifiedDate")
+                    {
+                        propValue = DateTime.Now;
+                    }
+
+                    queryLine.Add($"{propName} = @{propName}");
+                    dynamicParameters.Add($"@{propName}", propValue);
+                }
+
+                dynamicParameters.Add("@oldEntityId", entityId);
+                var sqlQuery = $"UPDATE {_className} SET {String.Join(", ", queryLine.ToArray())} " +
+                                $"WHERE {_className}Id = @oldEntityId";
+                rowEffects = mySqlConnection.Execute(sqlQuery, param: dynamicParameters, transaction: transaction);
+
+                transaction.Commit();
+            }
+            catch (Exception)
+            {
+                if (transaction != null)
+                {
+                    transaction.Rollback();
+                }
+                throw;
+            }
+            finally
+            {
+                if (mySqlConnection != null) mySqlConnection.Close();
+            }
+            return rowEffects;
+        } 
+        #endregion 
         #endregion
     }
 }

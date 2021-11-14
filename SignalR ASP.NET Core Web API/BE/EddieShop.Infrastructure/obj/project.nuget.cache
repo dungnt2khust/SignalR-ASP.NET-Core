@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "bSIiYJSJmUCjKbUxvccTA5R7NNkQmU9GU3vkXwjeqSQP8btZPnB0Kn+/aTfZp/I6xkqs0nVpdGANpLVsvxeQWg==",
+  "dgSpecHash": "33bj0axNKp4cOq14Zhwb0+atzoU49ghWND6EDcsaXserVdRluEDuAc4pPcOnYL2D04ByoRo58mZSRzHL06OeeQ==",
   "success": true,
-  "projectFilePath": "C:\\Workspace\\ASP.NET\\ASP.NET Core Web API\\BE\\EddieShop.Infrastructure\\EddieShop.Infrastructure.csproj",
+  "projectFilePath": "C:\\Workspace\\ASP.NET\\SignalR-ASP.NET-Core\\SignalR ASP.NET Core Web API\\BE\\EddieShop.Infrastructure\\EddieShop.Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\dungg\\.nuget\\packages\\dapper\\2.0.90\\dapper.2.0.90.nupkg.sha512",
     "C:\\Users\\dungg\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\5.0.0\\microsoft.extensions.configuration.abstractions.5.0.0.nupkg.sha512",

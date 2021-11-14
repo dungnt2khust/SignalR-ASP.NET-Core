@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "KYBdS4FS9WUNYYMJnTTzPzh5qmVuIobhPkH2RTfyTqPvomBoFAy/ZpimdWwfSkHth+EGJwcjl3xfMQI9MX63bw==",
+  "dgSpecHash": "87Ccvf7MmK36h5kiOWYuJQA3+1/2mDqeAKzc05FK/h/eXivDSzwRqWMyEHdd9P0D9dlxOkDWjz0eOMBQnZGYVQ==",
   "success": true,
-  "projectFilePath": "C:\\Workspace\\ASP.NET\\ASP.NET Core Web API\\BE\\EddieShop.Core\\EddieShop.Core.csproj",
+  "projectFilePath": "C:\\Workspace\\ASP.NET\\SignalR-ASP.NET-Core\\SignalR ASP.NET Core Web API\\BE\\EddieShop.Core\\EddieShop.Core.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

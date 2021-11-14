@@ -1,23 +1,23 @@
 var NavbarData = [
   {
-    Title: "Trang chủ",
-    Path: "Home"
+    Title: "i18nMenu.Main.Home",
+    Path: "home"
   },
   {
-    Title: "Đơn hàng",
-    Path: "Order"
+    Title: "i18nMenu.Main.Order",
+    Path: "order"
   },
   {
-    Title: "Giỏ hàng",
-    Path: "Cart"
+    Title: "i18nMenu.Main.Cart",
+    Path: "cart"
   },
   {
-    Title: "ChatHub",
-    Path: "MessageSignalR"
+    Title: "i18nMenu.Main.MessageSignalR",
+    Path: "messageSignalR"
   },
   {
-    Title: "Admin",
-    Path: "Admin"
+    Title: "i18nMenu.Main.Admin",
+    Path: "admin"
   }
 ];
 export default NavbarData;

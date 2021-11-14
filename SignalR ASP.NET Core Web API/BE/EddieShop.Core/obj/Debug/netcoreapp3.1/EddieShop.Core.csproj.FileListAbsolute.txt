@@ -20,3 +20,14 @@ C:\Workspace\ASP.NET\ASP.NET Core Web API\BE\EddieShop.Core\obj\Debug\netcoreapp
 C:\Workspace\ASP.NET\ASP.NET Core Web API\BE\EddieShop.Core\obj\Debug\netcoreapp3.1\EddieShop.Core.csproj.CoreCompileInputs.cache
 C:\Workspace\ASP.NET\ASP.NET Core Web API\BE\EddieShop.Core\obj\Debug\netcoreapp3.1\EddieShop.Core.dll
 C:\Workspace\ASP.NET\ASP.NET Core Web API\BE\EddieShop.Core\obj\Debug\netcoreapp3.1\EddieShop.Core.pdb
+C:\Workspace\ASP.NET\SignalR-ASP.NET-Core\SignalR ASP.NET Core Web API\BE\EddieShop.Core\bin\Debug\netcoreapp3.1\EddieShop.Core.deps.json
+C:\Workspace\ASP.NET\SignalR-ASP.NET-Core\SignalR ASP.NET Core Web API\BE\EddieShop.Core\bin\Debug\netcoreapp3.1\EddieShop.Core.dll
+C:\Workspace\ASP.NET\SignalR-ASP.NET-Core\SignalR ASP.NET Core Web API\BE\EddieShop.Core\bin\Debug\netcoreapp3.1\EddieShop.Core.pdb
+C:\Workspace\ASP.NET\SignalR-ASP.NET-Core\SignalR ASP.NET Core Web API\BE\EddieShop.Core\obj\Debug\netcoreapp3.1\EddieShop.Core.csproj.AssemblyReference.cache
+C:\Workspace\ASP.NET\SignalR-ASP.NET-Core\SignalR ASP.NET Core Web API\BE\EddieShop.Core\obj\Debug\netcoreapp3.1\EddieShop.Core.Resources.ResourceVN.resources
+C:\Workspace\ASP.NET\SignalR-ASP.NET-Core\SignalR ASP.NET Core Web API\BE\EddieShop.Core\obj\Debug\netcoreapp3.1\EddieShop.Core.csproj.GenerateResource.cache
+C:\Workspace\ASP.NET\SignalR-ASP.NET-Core\SignalR ASP.NET Core Web API\BE\EddieShop.Core\obj\Debug\netcoreapp3.1\EddieShop.Core.AssemblyInfoInputs.cache
+C:\Workspace\ASP.NET\SignalR-ASP.NET-Core\SignalR ASP.NET Core Web API\BE\EddieShop.Core\obj\Debug\netcoreapp3.1\EddieShop.Core.AssemblyInfo.cs
+C:\Workspace\ASP.NET\SignalR-ASP.NET-Core\SignalR ASP.NET Core Web API\BE\EddieShop.Core\obj\Debug\netcoreapp3.1\EddieShop.Core.csproj.CoreCompileInputs.cache
+C:\Workspace\ASP.NET\SignalR-ASP.NET-Core\SignalR ASP.NET Core Web API\BE\EddieShop.Core\obj\Debug\netcoreapp3.1\EddieShop.Core.dll
+C:\Workspace\ASP.NET\SignalR-ASP.NET-Core\SignalR ASP.NET Core Web API\BE\EddieShop.Core\obj\Debug\netcoreapp3.1\EddieShop.Core.pdb

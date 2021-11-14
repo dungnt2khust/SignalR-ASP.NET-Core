@@ -66,9 +66,11 @@ namespace EddieShop.Core.Interfaces.Base
         /// </summary>
         /// <param name="entity"></param>
         /// <param name="mode"></param>
+        /// <param name="columns"></param>
         /// <returns></returns>
         /// CreatedBy: NTDUNG(04/10/2021)
-        ServiceResult ValidateData(TEntity entity, string mode);
+        /// ModifiedBy: NTDUNG (14/11/2021)
+        ServiceResult ValidateData(TEntity entity, string mode, List<string> columns);
 
 
         /// <summary>
@@ -90,11 +92,13 @@ namespace EddieShop.Core.Interfaces.Base
         ServiceResult GetFilterPaging(string filterString, int pageNumber, int pageSize, List<String> totalFields);
 
         /// <summary>
-        /// Thêm mới Master Detail
+        /// Cập nhật theo tên cột
         /// </summary>
-        /// <param name="data"></param>
+        /// <param name="entity"></param>
+        /// <param name="entityId"></param>
+        /// <param name="columns"></param>
         /// <returns></returns>
-        /// CreatedBy: NTDUNG(28/10/2021)
-        //ServiceResult InsertMasterDetail(Object data);
+        /// CreatedBy: NTDUNG (14/11/2021)
+        ServiceResult UpdateColumns(TEntity entity, Guid entityId, List<string> columns);
     }
 }

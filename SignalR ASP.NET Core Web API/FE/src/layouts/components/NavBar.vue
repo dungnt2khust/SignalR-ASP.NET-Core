@@ -1,7 +1,9 @@
 <template lang="">
     <div class="navbar">
-        <div v-for="(navbar, index) in navbarData" @click="navBarItemClick(index)" class="navbar__item" :key="index">
-            {{ navbar.Title }}
+        <div v-for="(navbar, index) in navbarData" 
+            @click="navBarItemClick(index)" class="navbar__item" 
+            :class="{'selected': index == 0}":key="index">
+            {{ $t(navbar.Title) }}
         </div>
     </div>
 </template>

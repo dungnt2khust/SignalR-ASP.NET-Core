@@ -100,11 +100,13 @@ namespace EddieShop.Core.Interfaces.Base
         Object GetFilterPaging(string filterString, int pageNumber, int pageSize, List<String> totalFields);
 
         /// <summary>
-        /// Thêm mới master detail
+        /// Cập nhật theo tên cột
         /// </summary>
-        /// <param name="Data"></param>
+        /// <param name="entity"></param>
+        /// <param name="entityId"></param>
+        /// <param name="columns"></param>
         /// <returns></returns>
-        /// CreatedBy: NTDUNG(28/10/2021)
-        //int InsertMasterDetail(Object Data);
+        /// CreatedBy: NTDUNG (14/11/2021)
+        int UpdateColumns(TEntity entity, Guid entityId, List<string> columns);
     }
 }

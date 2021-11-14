@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "7RR6ady0x9MIKPdQAyA+b+2L9YyWyXAF7ZRkO87CiqVr8sYIu1ALEdkLhlqnnSHO2Lq7bkCyyQhzip7qeZsM/g==",
+  "dgSpecHash": "7lv7x+QDVfOWOF5jyyXMWfIN0iTN1TqMf+pVujma0tue0v0o9XhQIAvs2ObakoORFoTh2XJbP4zblyXcjrTMQg==",
   "success": true,
-  "projectFilePath": "C:\\Workspace\\ASP.NET\\ASP.NET Core Web API\\BE\\EddieShop.Controller.API\\EddieShop.Controller.API.csproj",
+  "projectFilePath": "C:\\Workspace\\ASP.NET\\SignalR-ASP.NET-Core\\SignalR ASP.NET Core Web API\\BE\\EddieShop.Controller.API\\EddieShop.Controller.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\dungg\\.nuget\\packages\\dapper\\2.0.90\\dapper.2.0.90.nupkg.sha512",
     "C:\\Users\\dungg\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",

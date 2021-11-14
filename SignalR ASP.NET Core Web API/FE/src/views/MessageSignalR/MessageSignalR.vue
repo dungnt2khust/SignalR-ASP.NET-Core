@@ -1,26 +1,26 @@
 <template>
-  <div class="content">
-    <div class="message-signalr">
-      <div class="message-signalr__main" @keydown.enter="send">
-        <ul ref="listMessages" class="message-signalr__list defaultScrollbar" >
-          <li class="message-signalr__item" v-for="(message, index) in messages" 
-          :class="{'item--other': message.userID != userID}" :key="index">
-            <span class="username">{{message.user}}</span>
-            <span class="message">{{message.message}}</span>
-          </li>
-        </ul>
-        <div class="message-signalr__input">
-          <span class="userid">UserID: {{userID}}</span>
-          <input class="message-signalr__name" type="text" :readonly="readonlyName ? true : false" v-model="name" placeholder="Name" />
-          <input class="message-signalr__message" type="text" v-model="message" placeholder="Message" />
-          <button class="message-signalr__send" @click="send">Send</button>
-        </div> 
+  <div class="message-signalr">
+    <div class="message-signalr__main" @keydown.enter="send">
+      <ul ref="listMessages" class="message-signalr__list defaultScrollbar" >
+        <li class="message-signalr__item" v-for="(message, index) in messages" 
+        :class="{'item--other': message.userID != userID}" :key="index">
+          <span class="username">{{message.user}}</span>
+          <span class="message">{{message.message}}</span>
+          <span class="message">{{message.userID}}</span>
+        </li>
+      </ul>
+      <div class="message-signalr__input">
+        <span class="userid">UserID: {{userID}}</span>
+        <input class="message-signalr__name" type="text" :readonly="readonlyName ? true : false" v-model="name" placeholder="Name" />
+        <input class="message-signalr__message" type="text" v-model="message" placeholder="Message" />
+        <button class="message-signalr__send" @click="send">Send</button>
       </div> 
     </div> 
-  </div>
+  </div> 
 </template>
 
 <script>
+
 const signalR = require("@aspnet/signalr");
 
 export default {
@@ -30,11 +30,14 @@ export default {
       name: "",
       message: "",
       connection: "",
-      messages: [],
-      userID: Math.round(Math.random()*10)
+      messages: []
     };
   },
   methods: {
+    /**
+     * Gửi tin nhắn đến người dùng khác
+     * CreatedBy: NTDUNG (14/11/2021)
+     */
     send() {
       if (this.name) {
         this.readonlyName = true;
@@ -42,36 +45,25 @@ export default {
         this.readonlyName = false;
       }
       this.connection
-        .invoke("SendMessage", this.name, this.message, this.userID)
+        .invoke("SendMessage", this.name, this.message)
         .catch(error => {
           console.log(error);
         });
       this.message = "";
+    },
+    /**
+     * Gửi tin nhắn đến Admin
+     * CreatedBy: NTDUNG (14/11/2021)
+     */
+    sendToAdmin() {
+
     }
   },
   created() {
-    this.connection = new signalR.HubConnectionBuilder()
-      .withUrl("https://localhost:44328/hub/chat")
-      .configureLogging(signalR.LogLevel.Information)
-      .build();
-
-    this.connection.start().catch(error => {
-      console.log(error);
-    });
+    
   },
   mounted() {
-    this.connection.on("ReceiveMessage", (user, message, userID) => {
-      if (user == "ADMIN" && (userID == this.userID || !userID))  {
-        this.messages.push({user, message, userID: -1});
-      } else if (user != "ADMIN") {
-        this.messages.push({user, message, userID});
-      }
-
-      this.$nextTick(() => {
-        var lastMessage = this.$refs.listMessages.querySelector('li:last-child');
-        lastMessage.scrollIntoView();
-      });
-    });
+    
   }
 };
 </script>
