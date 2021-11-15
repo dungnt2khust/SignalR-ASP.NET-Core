@@ -13,12 +13,14 @@ namespace EddieShop.Controller.API.Hubs
     {
         #region Declare
         IBaseService<User> _userService;
+        IBaseService<Admin> _adminService;
         #endregion
 
         #region Contructor
-        public SignalRHub(IBaseService<User> userService)
+        public SignalRHub(IBaseService<User> userService, IBaseService<Admin> adminService)
         {
-            _userService = userService;         
+            _userService = userService;
+            _adminService = adminService;
         }
         #endregion
 
@@ -35,13 +37,14 @@ namespace EddieShop.Controller.API.Hubs
         #endregion
 
         #region UpdateConnectionID
+        #region UpdateConnectionIDUser
         /// <summary>
         /// Cập nhật connectionID mới
         /// </summary>
         /// <param name="user"></param>
         /// <returns></returns>
         /// CreatedBy: NTDUNG (14/11/2021)
-        public ServiceResult UpdateConnectionID(User user)
+        public ServiceResult UpdateConnectionIDUser(User user)
         {
             List<string> columns = new List<string>();
             columns.Add("ConnectionID");
@@ -55,7 +58,31 @@ namespace EddieShop.Controller.API.Hubs
             return serviceResult;
         }
         #endregion
+
+        #region UpdateConnectionIDAdmin
+        /// <summary>
+        /// Cập nhật connectionID mới cho admin
+        /// </summary>
+        /// <param name="admin"></param>
+        /// <returns></returns>
+        /// CreatedBy: NTDUNG (15/11/2021)
+        public ServiceResult UpdateConnectionIDAdmin(Admin admin)
+        {
+            List<string> columns = new List<string>();
+            columns.Add("ConnectionID");
+            admin.ConnectionID = Context.ConnectionId;
+
+            var serviceResult = _adminService.UpdateColumns(admin, admin.AdminID, columns);
+            serviceResult.Data = new
+            {
+                ConnectionID = Context.ConnectionId
+            };
+            return serviceResult;
+        }
+        #endregion
+        #endregion
         
+
         public async Task SendMessage(string user, string message, int userID)
         {
             await Clients.All.SendAsync("ReceiveMessage", user, message, userID, Context.ConnectionId);

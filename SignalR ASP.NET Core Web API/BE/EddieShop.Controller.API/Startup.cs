@@ -66,9 +66,11 @@ namespace EddieShop.Controller.API
             // Repository DI
             services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));
             services.AddScoped<IProductRepository, ProductRepository>();
+            services.AddScoped<IAccountRepository, AccountRepository>();
             // Service DI
             services.AddScoped(typeof(IBaseService<>), typeof(BaseService<>));
             services.AddScoped<IProductService, ProductService>();
+            services.AddScoped<IAccountService, AccountService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

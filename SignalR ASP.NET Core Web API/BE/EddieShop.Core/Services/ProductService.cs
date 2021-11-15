@@ -13,6 +13,7 @@ namespace EddieShop.Core.Services
         #region Declare
         IProductRepository _productRepository;
         #endregion
+        
         #region Contructor
         public ProductService(IBaseRepository<Product> baseRepository, IProductRepository productRepository) : base(baseRepository)
         {

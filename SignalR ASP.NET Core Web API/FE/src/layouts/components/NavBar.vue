@@ -2,19 +2,21 @@
     <div class="navbar">
         <div v-for="(navbar, index) in navbarData" 
             @click="navBarItemClick(index)" class="navbar__item" 
-            :class="{'selected': index == 0}":key="index">
+            :class="{'selected': $route.path == navbar.Path}":key="index">
             {{ $t(navbar.Title) }}
         </div>
     </div>
 </template>
 <script>
-import NavbarData from "@/layouts/menu/menu.js"
 
 export default {
     name: "NavBar",
-    data() {
-        return { 
-            navbarData: NavbarData
+    props: {
+        navbarData: {
+            type: Array,
+            default: function() {
+                return [];
+            }
         }
     },
     methods: {
@@ -26,6 +28,11 @@ export default {
         navBarItemClick(index) {
             // this.$popup.confirmDelete(this.navBarData[index]);
             this.$router.push(this.navbarData[index].Path);
+        }
+    },
+    watch: {
+        $route(val) {
+            console.log(val);
         }
     }
 }

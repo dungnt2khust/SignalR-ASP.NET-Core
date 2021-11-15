@@ -61,6 +61,24 @@ namespace EddieShop.Core.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Tài khoản không đúng.
+        /// </summary>
+        public static string Account_Invalid {
+            get {
+                return ResourceManager.GetString("Account_Invalid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tài khoản hợp lệ.
+        /// </summary>
+        public static string Account_Valid {
+            get {
+                return ResourceManager.GetString("Account_Valid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to DANH SÁCH NHÂN VIÊN.
         /// </summary>
         public static string Employee_Export_Title {
@@ -156,6 +174,24 @@ namespace EddieShop.Core.Resources {
         public static string Fail_Update {
             get {
                 return ResourceManager.GetString("Fail_Update", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Phiên đăng nhập không hợp lệ.
+        /// </summary>
+        public static string Session_Invalid {
+            get {
+                return ResourceManager.GetString("Session_Invalid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Phiên đăng nhập hợp lệ.
+        /// </summary>
+        public static string Session_Valid {
+            get {
+                return ResourceManager.GetString("Session_Valid", resourceCulture);
             }
         }
         

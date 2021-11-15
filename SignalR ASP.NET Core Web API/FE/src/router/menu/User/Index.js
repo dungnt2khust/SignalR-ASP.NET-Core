@@ -1,23 +1,23 @@
 var NavbarData = [
   {
     Title: "i18nMenu.Main.Home",
-    Path: "home"
+    Path: "/home"
   },
   {
     Title: "i18nMenu.Main.Order",
-    Path: "order"
+    Path: "/order"
   },
   {
     Title: "i18nMenu.Main.Cart",
-    Path: "cart"
+    Path: "/cart"
   },
   {
     Title: "i18nMenu.Main.MessageSignalR",
-    Path: "messageSignalR"
+    Path: "/messageSignalR"
   },
   {
     Title: "i18nMenu.Main.Admin",
-    Path: "admin"
+    Path: "/admin"
   }
 ];
 export default NavbarData;
