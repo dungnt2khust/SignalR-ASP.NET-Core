@@ -34,3 +34,16 @@ C:\Workspace\ASP.NET\SignalR-ASP.NET-Core\SignalR ASP.NET Core Web API\BE\EddieS
 C:\Workspace\ASP.NET\SignalR-ASP.NET-Core\SignalR ASP.NET Core Web API\BE\EddieShop.Infrastructure\obj\Debug\netcoreapp3.1\EddieShop.Infrastructure.csproj.CopyComplete
 C:\Workspace\ASP.NET\SignalR-ASP.NET-Core\SignalR ASP.NET Core Web API\BE\EddieShop.Infrastructure\obj\Debug\netcoreapp3.1\EddieShop.Infrastructure.dll
 C:\Workspace\ASP.NET\SignalR-ASP.NET-Core\SignalR ASP.NET Core Web API\BE\EddieShop.Infrastructure\obj\Debug\netcoreapp3.1\EddieShop.Infrastructure.pdb
+F:\ASP.NET\SignalR-ASP.NET-Core\SignalR ASP.NET Core Web API\BE\EddieShop.Infrastructure\bin\Debug\netcoreapp3.1\EddieShop.Infrastructure.deps.json
+F:\ASP.NET\SignalR-ASP.NET-Core\SignalR ASP.NET Core Web API\BE\EddieShop.Infrastructure\bin\Debug\netcoreapp3.1\EddieShop.Infrastructure.dll
+F:\ASP.NET\SignalR-ASP.NET-Core\SignalR ASP.NET Core Web API\BE\EddieShop.Infrastructure\bin\Debug\netcoreapp3.1\EddieShop.Infrastructure.pdb
+F:\ASP.NET\SignalR-ASP.NET-Core\SignalR ASP.NET Core Web API\BE\EddieShop.Infrastructure\bin\Debug\netcoreapp3.1\EddieShop.Core.dll
+F:\ASP.NET\SignalR-ASP.NET-Core\SignalR ASP.NET Core Web API\BE\EddieShop.Infrastructure\bin\Debug\netcoreapp3.1\EddieShop.Core.pdb
+F:\ASP.NET\SignalR-ASP.NET-Core\SignalR ASP.NET Core Web API\BE\EddieShop.Infrastructure\obj\Debug\netcoreapp3.1\EddieShop.Infrastructure.csproj.AssemblyReference.cache
+F:\ASP.NET\SignalR-ASP.NET-Core\SignalR ASP.NET Core Web API\BE\EddieShop.Infrastructure\obj\Debug\netcoreapp3.1\EddieShop.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+F:\ASP.NET\SignalR-ASP.NET-Core\SignalR ASP.NET Core Web API\BE\EddieShop.Infrastructure\obj\Debug\netcoreapp3.1\EddieShop.Infrastructure.AssemblyInfoInputs.cache
+F:\ASP.NET\SignalR-ASP.NET-Core\SignalR ASP.NET Core Web API\BE\EddieShop.Infrastructure\obj\Debug\netcoreapp3.1\EddieShop.Infrastructure.AssemblyInfo.cs
+F:\ASP.NET\SignalR-ASP.NET-Core\SignalR ASP.NET Core Web API\BE\EddieShop.Infrastructure\obj\Debug\netcoreapp3.1\EddieShop.Infrastructure.csproj.CoreCompileInputs.cache
+F:\ASP.NET\SignalR-ASP.NET-Core\SignalR ASP.NET Core Web API\BE\EddieShop.Infrastructure\obj\Debug\netcoreapp3.1\EddieShop.Infrastructure.csproj.CopyComplete
+F:\ASP.NET\SignalR-ASP.NET-Core\SignalR ASP.NET Core Web API\BE\EddieShop.Infrastructure\obj\Debug\netcoreapp3.1\EddieShop.Infrastructure.dll
+F:\ASP.NET\SignalR-ASP.NET-Core\SignalR ASP.NET Core Web API\BE\EddieShop.Infrastructure\obj\Debug\netcoreapp3.1\EddieShop.Infrastructure.pdb

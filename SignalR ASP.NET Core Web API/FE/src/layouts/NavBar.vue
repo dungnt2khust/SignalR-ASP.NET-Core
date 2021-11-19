@@ -38,5 +38,5 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-    @import "@/assets/scss/components/layout/navbar.scss";
+    @import "@/assets/scss/layouts/navbar.scss";
 </style>

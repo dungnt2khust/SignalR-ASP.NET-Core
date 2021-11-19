@@ -1,13 +1,13 @@
 <template lang="">
-    <div class="login">
-        {{$account.AccountData}}
+    <div class="footer">
+        
     </div>
 </template>
 <script>
 export default {
-    name: "Login"
+    name: "Footer" 
 }
 </script>
 <style lang="">
-    
+    @import "@/assets/scss/layouts/footer.scss";
 </style>

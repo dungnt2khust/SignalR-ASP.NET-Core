@@ -18,5 +18,18 @@ namespace EddieShop.Core.Enums
             // Xoá
             DELETE = 2
         }
+
+        /// <summary>
+        /// Loại tài khoản
+        /// </summary>
+        public enum AccountType
+        {
+            // Khách
+            GUEST = 0,
+            // Người dùng
+            USER = 1,
+            // Quản trị viên
+            ADMIN = 2
+        }
     }
 }

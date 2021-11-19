@@ -1,8 +1,8 @@
 var routes = [
-  { path: "/", redirect: "home" },
+  { path: "/", redirect: "/admin/home" },
   {
-    path: "home",
-    name: "Home",
+    path: "/admin/home",
+    name: "AdminHome",
     exact: true,
     component: () =>
       import(/* webPackChunkName: 'Home' */ "@/views/User/HomePage/HomePage.vue"),
@@ -11,8 +11,8 @@ var routes = [
     }
   },
   {
-    path: "order",
-    name: "Order",
+    path: "/admin/order",
+    name: "AdminOrder",
     exact: true,
     component: () =>
       import(/* webPackChunkName: 'Home' */ "@/views/User/Order/Order.vue"),
@@ -21,8 +21,8 @@ var routes = [
     }
   },
   {
-    path: "cart",
-    name: "Cart",
+    path: "/admin/cart",
+    name: "AdminCart",
     exact: true,
     component: () =>
       import(/* webPackChunkName: 'Home' */ "@/views/User/Cart/Cart.vue"),
@@ -31,8 +31,8 @@ var routes = [
     }
   },
   {
-    path: "messageSignalR",
-    name: "SignalR",
+    path: "/admin/messageSignalR",
+    name: "admin/SignalR",
     exact: true,
     component: () =>
       import(

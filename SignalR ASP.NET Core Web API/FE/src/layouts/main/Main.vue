@@ -1,27 +1,54 @@
 <template lang="">
   <div class="main">
     <router-view />
-    {{accountData}}
   </div>
 </template>
 <script>
 
 // Plugins
-import User from "@/models/model/User/User.js"
+import {AccountType} from "@/models/enum/AccountType.js";
 
 export default {
   name: "Main",
   data() {
     return {
-      accountData: {}
     }
   },
-  created() {
-    if(!this.$account.checkSession()) {
-      this.$router.push('login');
-    }
+  mounted() {
+    // Kiểm tra session khi vào trang web
+    this.checkSession();
   },
   methods: {
+    /**
+     * Kiểm tra phiên đăng nhập
+     * CreatedBy: NTDUNG (19/11/2021)
+     */
+    checkSession() {
+      if (this.$storage._getLocalStorage("Session")) {
+        this.$account.checkSession()
+          .then(res => {
+            if (res.data.Data.AccountType) {
+              this.$account.AccountData = res.data.Data;              
+              this.connectServer();
+            } else {
+              this.$account.AccountData = {
+                AccountType: AccountType.GUEST,
+                Data: {}
+              }
+              this.$router.push('/login');
+            }
+          })
+          .catch(err => {
+            console.log(err);
+          })
+      } else {
+        this.$account.AccountData = {
+          AccountType: AccountType.GUEST,
+          Data: {}
+        }
+        this.$router.push('/login');
+      }
+    },
     /**
      * Kết nối với server
      * CreatedBy: NTDUNG (13/11/2021)
@@ -33,9 +60,10 @@ export default {
         .then(() => {
           // Kết nối thành công => Cập nhật ConnectionID
           this.$SignalR
-            .invoke("UpdateConnectionIDUser", User.initData())
+            .invoke("UpdateConnectionID", this.$account.AccountData)
             .then(res => {
-              console.log(res);
+              alert("Chào mừng " + this.$account.AccountData.Data.DisplayName);
+              this.$router.push('/home');
             });
         })
         .catch(error => {
@@ -50,7 +78,6 @@ export default {
       immediate: true,
       deep: true,
       handler(to, from) {
-        console.log(to.meta.Title);
         document.title = this.$t(to.meta.Title);
       }
     }
@@ -58,5 +85,5 @@ export default {
 };
 </script>
 <style lang="scss">
-@import "@/assets/scss/components/layout/main.scss";
+@import "@/assets/scss/layouts/main.scss";
 </style>

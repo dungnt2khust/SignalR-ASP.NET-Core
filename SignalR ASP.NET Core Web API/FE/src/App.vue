@@ -7,7 +7,7 @@
 
 <script>
 // Components
-import Header from "@/layouts/components/Header.vue"
+import Header from "@/layouts/Header.vue"
 import Main from "@/layouts/main/Main.vue"
 
 // Plugins

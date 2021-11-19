@@ -31,3 +31,15 @@ C:\Workspace\ASP.NET\SignalR-ASP.NET-Core\SignalR ASP.NET Core Web API\BE\EddieS
 C:\Workspace\ASP.NET\SignalR-ASP.NET-Core\SignalR ASP.NET Core Web API\BE\EddieShop.Core\obj\Debug\netcoreapp3.1\EddieShop.Core.csproj.CoreCompileInputs.cache
 C:\Workspace\ASP.NET\SignalR-ASP.NET-Core\SignalR ASP.NET Core Web API\BE\EddieShop.Core\obj\Debug\netcoreapp3.1\EddieShop.Core.dll
 C:\Workspace\ASP.NET\SignalR-ASP.NET-Core\SignalR ASP.NET Core Web API\BE\EddieShop.Core\obj\Debug\netcoreapp3.1\EddieShop.Core.pdb
+F:\ASP.NET\SignalR-ASP.NET-Core\SignalR ASP.NET Core Web API\BE\EddieShop.Core\bin\Debug\netcoreapp3.1\EddieShop.Core.deps.json
+F:\ASP.NET\SignalR-ASP.NET-Core\SignalR ASP.NET Core Web API\BE\EddieShop.Core\bin\Debug\netcoreapp3.1\EddieShop.Core.dll
+F:\ASP.NET\SignalR-ASP.NET-Core\SignalR ASP.NET Core Web API\BE\EddieShop.Core\bin\Debug\netcoreapp3.1\EddieShop.Core.pdb
+F:\ASP.NET\SignalR-ASP.NET-Core\SignalR ASP.NET Core Web API\BE\EddieShop.Core\obj\Debug\netcoreapp3.1\EddieShop.Core.csproj.AssemblyReference.cache
+F:\ASP.NET\SignalR-ASP.NET-Core\SignalR ASP.NET Core Web API\BE\EddieShop.Core\obj\Debug\netcoreapp3.1\EddieShop.Core.Resources.ResourceVN.resources
+F:\ASP.NET\SignalR-ASP.NET-Core\SignalR ASP.NET Core Web API\BE\EddieShop.Core\obj\Debug\netcoreapp3.1\EddieShop.Core.csproj.GenerateResource.cache
+F:\ASP.NET\SignalR-ASP.NET-Core\SignalR ASP.NET Core Web API\BE\EddieShop.Core\obj\Debug\netcoreapp3.1\EddieShop.Core.GeneratedMSBuildEditorConfig.editorconfig
+F:\ASP.NET\SignalR-ASP.NET-Core\SignalR ASP.NET Core Web API\BE\EddieShop.Core\obj\Debug\netcoreapp3.1\EddieShop.Core.AssemblyInfoInputs.cache
+F:\ASP.NET\SignalR-ASP.NET-Core\SignalR ASP.NET Core Web API\BE\EddieShop.Core\obj\Debug\netcoreapp3.1\EddieShop.Core.AssemblyInfo.cs
+F:\ASP.NET\SignalR-ASP.NET-Core\SignalR ASP.NET Core Web API\BE\EddieShop.Core\obj\Debug\netcoreapp3.1\EddieShop.Core.csproj.CoreCompileInputs.cache
+F:\ASP.NET\SignalR-ASP.NET-Core\SignalR ASP.NET Core Web API\BE\EddieShop.Core\obj\Debug\netcoreapp3.1\EddieShop.Core.dll
+F:\ASP.NET\SignalR-ASP.NET-Core\SignalR ASP.NET Core Web API\BE\EddieShop.Core\obj\Debug\netcoreapp3.1\EddieShop.Core.pdb

@@ -7,8 +7,8 @@
     </div>
 </template>
 <script>
-import NavBar from "@/layouts/components/NavBar.vue";
-import Logo from "@/layouts/components/Logo.vue";
+import NavBar from "@/layouts/NavBar.vue";
+import Logo from "@/layouts/Logo.vue";
 
 export default {
     name: "Header",
@@ -19,5 +19,5 @@ export default {
 }
 </script>
 <style lang="scss">
-    @import "@/assets/scss/components/layout/header.scss"; 
+    @import "@/assets/scss/layouts/header.scss"; 
 </style>

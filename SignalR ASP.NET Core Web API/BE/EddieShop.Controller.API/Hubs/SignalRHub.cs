@@ -1,4 +1,5 @@
 ﻿using EddieShop.Core.Entities;
+using EddieShop.Core.Entities.Common;
 using EddieShop.Core.Interfaces.Base;
 using EddieShop.Core.Services;
 using Microsoft.AspNetCore.SignalR;
@@ -6,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using static EddieShop.Core.Enums.EddieShopEnum;
 
 namespace EddieShop.Controller.API.Hubs
 {
@@ -37,42 +39,36 @@ namespace EddieShop.Controller.API.Hubs
         #endregion
 
         #region UpdateConnectionID
-        #region UpdateConnectionIDUser
         /// <summary>
-        /// Cập nhật connectionID mới
-        /// </summary>
-        /// <param name="user"></param>
-        /// <returns></returns>
-        /// CreatedBy: NTDUNG (14/11/2021)
-        public ServiceResult UpdateConnectionIDUser(User user)
-        {
-            List<string> columns = new List<string>();
-            columns.Add("ConnectionID");
-            user.ConnectionID = Context.ConnectionId;
-
-            var serviceResult = _userService.UpdateColumns(user, user.UserID, columns);
-            serviceResult.Data = new
-            {
-                ConnectionID = Context.ConnectionId
-            };
-            return serviceResult;
-        }
-        #endregion
-
-        #region UpdateConnectionIDAdmin
-        /// <summary>
-        /// Cập nhật connectionID mới cho admin
+        /// Cập nhật connectionID mới cho tài khoản
         /// </summary>
         /// <param name="admin"></param>
         /// <returns></returns>
         /// CreatedBy: NTDUNG (15/11/2021)
-        public ServiceResult UpdateConnectionIDAdmin(Admin admin)
+        /// ModifiedBy: NTDUNG (19/11/2021)
+        public ServiceResult UpdateConnectionID(AccountData accountData)
         {
             List<string> columns = new List<string>();
-            columns.Add("ConnectionID");
-            admin.ConnectionID = Context.ConnectionId;
+            var serviceResult = new ServiceResult();
 
-            var serviceResult = _adminService.UpdateColumns(admin, admin.AdminID, columns);
+            columns.Add("ConnectionID");
+
+            var _accountId = accountData.AccountId;
+
+            switch(accountData.AccountType)
+            {
+                case (int)AccountType.USER:
+                    var newDataUser = new User();
+                    newDataUser.ConnectionID = Context.ConnectionId;
+                    serviceResult = _userService.UpdateColumns(newDataUser, _accountId, columns);
+                    break;
+                case (int)AccountType.ADMIN:
+                    var newDataAdmin = new Admin();
+                    newDataAdmin.ConnectionID = Context.ConnectionId;
+                    serviceResult = _adminService.UpdateColumns(newDataAdmin, _accountId, columns);
+                    break;
+            }
+
             serviceResult.Data = new
             {
                 ConnectionID = Context.ConnectionId
@@ -80,8 +76,7 @@ namespace EddieShop.Controller.API.Hubs
             return serviceResult;
         }
         #endregion
-        #endregion
-        
+
 
         public async Task SendMessage(string user, string message, int userID)
         {
@@ -90,7 +85,7 @@ namespace EddieShop.Controller.API.Hubs
         public async Task SendMessageToSpecialUser(string connectionID, string message)
         {
             await Clients.Client(connectionID).SendAsync("ReceiveMessageAdmin", connectionID, message);
-        } 
+        }
 
         /// <summary>
         /// Lấy connectionID

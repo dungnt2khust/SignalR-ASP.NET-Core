@@ -1,33 +1,19 @@
 import BaseAPIConfig from "@/api/base/BaseAPIConfig.js";
-
 class Account {
   constructor() {
     this.controller = "Account";
+    this.AccountData = {};
   }
   /**
    * Kiểm tra session
    * CreatedBy: NTDUNG (15/11/2021)
    */
   checkSession() {
-    if (localStorage.getItem("Session"))
-      BaseAPIConfig.post(
-        `${this.controller}
-        /check-session?sessionID=${localStorage.getItem("Session")}`
-      )
-        .then(res => {
-          if (res.data.Data) {
-            this.accountData = res.data.Data;
-            return true;
-          } else {
-            return false;
-          }
-        })
-        .catch(res => {
-          alert(res);
-        });
-    else return false;
+    return BaseAPIConfig.post(
+      `${this.controller}/check-session?sessionID=${localStorage.getItem("Session")}`
+    )
   }
-
+  
   /**
    * Kiểm tra tài khoản
    * @param {String} type
@@ -36,8 +22,7 @@ class Account {
    */
   checkValidAccount(type, account) {
     return BaseAPIConfig.post(
-      `${this.controller}/${type}/check-valid-account`,
-      account
+      `${this.controller}/${type}/check-valid-account`, account
     );
   }
 }

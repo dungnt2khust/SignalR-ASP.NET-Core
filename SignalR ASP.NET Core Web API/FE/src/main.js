@@ -10,6 +10,9 @@ import plugin from './plugin/plugin.js'
 // SignalR: Kết nối realtime
 import SignalR from './signalr/signalR.js'
 
+// Global components
+import './globalComponents.js'
+
 // Integrated: Tích hợp
 import router from './router'
 import i18n from '@/i18n/i18n.js'

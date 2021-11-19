@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Text;
+using static EddieShop.Core.Enums.EddieShopEnum;
 
 namespace EddieShop.Infrastructure.Repository
 {
@@ -95,16 +96,32 @@ namespace EddieShop.Infrastructure.Repository
  
                 var sqlCommandAdmin = $"SELECT * FROM Admin WHERE SessionID = @SessionID";
                 var sqlCommandUser = $"SELECT * FROM User WHERE SessionID = @SessionID";
-                var entityAdmin = _dbConnection.QueryFirstOrDefault<Object>(sqlCommandAdmin, param: dynamicParameters);
-                var entityUser = _dbConnection.QueryFirstOrDefault<Object>(sqlCommandUser, param: dynamicParameters);
+                var entityAdmin = _dbConnection.QueryFirstOrDefault<Admin>(sqlCommandAdmin, param: dynamicParameters);
+                var entityUser = _dbConnection.QueryFirstOrDefault<User>(sqlCommandUser, param: dynamicParameters);
 
-                if (entityAdmin == null)
+                if (entityUser != null)
                 {
-                    return entityUser;
-                } else
+                    return new
+                    {
+                        AccountType = AccountType.USER,
+                        Data = entityUser,
+                        AccountId = entityUser.UserID
+                    };
+                }
+                if (entityAdmin != null)
                 {
-                    return entityAdmin;
-                } 
+                    return new
+                    {
+                        AccountType = AccountType.ADMIN,
+                        Data = entityAdmin,
+                        AccountId = entityAdmin.AdminID
+                    }; 
+                }
+                return new
+                {
+                    AccountType = AccountType.ADMIN,
+                    Data = new { }
+                };
             }
         }
         #endregion

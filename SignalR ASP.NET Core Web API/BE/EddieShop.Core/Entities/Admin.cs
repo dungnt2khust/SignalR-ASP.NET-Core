@@ -9,6 +9,6 @@ namespace EddieShop.Core.Entities
         /// <summary>
         /// Khoá chính
         /// </summary>
-        public Guid AdminID { get; set; }
+        public Guid? AdminID { get; set; }
     }
 }

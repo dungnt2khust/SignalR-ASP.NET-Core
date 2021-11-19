@@ -297,19 +297,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\dungg\\.nuget\\packages\\": {}
+    "C:\\Users\\NGUYEN TIEN DUNG\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Workspace\\ASP.NET\\SignalR-ASP.NET-Core\\SignalR ASP.NET Core Web API\\BE\\EddieShop.Infrastructure\\EddieShop.Infrastructure.csproj",
+      "projectUniqueName": "F:\\ASP.NET\\SignalR-ASP.NET-Core\\SignalR ASP.NET Core Web API\\BE\\EddieShop.Infrastructure\\EddieShop.Infrastructure.csproj",
       "projectName": "EddieShop.Infrastructure",
-      "projectPath": "C:\\Workspace\\ASP.NET\\SignalR-ASP.NET-Core\\SignalR ASP.NET Core Web API\\BE\\EddieShop.Infrastructure\\EddieShop.Infrastructure.csproj",
-      "packagesPath": "C:\\Users\\dungg\\.nuget\\packages\\",
-      "outputPath": "C:\\Workspace\\ASP.NET\\SignalR-ASP.NET-Core\\SignalR ASP.NET Core Web API\\BE\\EddieShop.Infrastructure\\obj\\",
+      "projectPath": "F:\\ASP.NET\\SignalR-ASP.NET-Core\\SignalR ASP.NET Core Web API\\BE\\EddieShop.Infrastructure\\EddieShop.Infrastructure.csproj",
+      "packagesPath": "C:\\Users\\NGUYEN TIEN DUNG\\.nuget\\packages\\",
+      "outputPath": "F:\\ASP.NET\\SignalR-ASP.NET-Core\\SignalR ASP.NET Core Web API\\BE\\EddieShop.Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\dungg\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\NGUYEN TIEN DUNG\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -323,8 +323,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Workspace\\ASP.NET\\SignalR-ASP.NET-Core\\SignalR ASP.NET Core Web API\\BE\\EddieShop.Core\\EddieShop.Core.csproj": {
-              "projectPath": "C:\\Workspace\\ASP.NET\\SignalR-ASP.NET-Core\\SignalR ASP.NET Core Web API\\BE\\EddieShop.Core\\EddieShop.Core.csproj"
+            "F:\\ASP.NET\\SignalR-ASP.NET-Core\\SignalR ASP.NET Core Web API\\BE\\EddieShop.Core\\EddieShop.Core.csproj": {
+              "projectPath": "F:\\ASP.NET\\SignalR-ASP.NET-Core\\SignalR ASP.NET Core Web API\\BE\\EddieShop.Core\\EddieShop.Core.csproj"
             }
           }
         }
@@ -371,7 +371,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
       }
     }
   }

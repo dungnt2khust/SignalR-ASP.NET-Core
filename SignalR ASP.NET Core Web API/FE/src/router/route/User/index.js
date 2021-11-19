@@ -1,7 +1,7 @@
 var routes = [
   { path: "/", redirect: "home" },
   {
-    path: "home",
+    path: "/home",
     name: "Home",
     exact: true,
     component: () =>
@@ -11,7 +11,7 @@ var routes = [
     }
   },
   {
-    path: "order",
+    path: "/order",
     name: "Order",
     exact: true,
     component: () =>
@@ -21,7 +21,7 @@ var routes = [
     }
   },
   {
-    path: "cart",
+    path: "/cart",
     name: "Cart",
     exact: true,
     component: () =>
@@ -31,7 +31,7 @@ var routes = [
     }
   },
   {
-    path: "messageSignalR",
+    path: "/messageSignalR",
     name: "SignalR",
     exact: true,
     component: () =>
