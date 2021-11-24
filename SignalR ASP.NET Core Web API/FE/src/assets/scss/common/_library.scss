@@ -1,12 +1,45 @@
 // Flex
-.fx-r {
+.fx-row {
     display: flex;
+    flex-direction: row;
+}
+.aln-i-center {
+    align-items: center;
+}
+.jus-c-center {
+    justify-content: center;
+}
+.jus-c-sbtn {
+    justify-content: space-between;
 }
 .fx-s-between {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+.fx-wrap {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+.wrap {
+    flex-wrap: wrap;
+}
+.fx-col {
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin flex {
+    @for $size from 1 to 10 {
+        .#{'flex-' + $size} {
+            flex: $size;
+        }
+    }
+}
+@include flex;
+
 @mixin fxCenter {
     display: flex;
     justify-content: center;
@@ -24,8 +57,23 @@
     position: sticky;
 }
 .pos-absolute {
-    position: sticky;
+    position: absolute;
 }
+
+// Gutter
+@mixin setGutter () {
+    @for $gut from 2 to 33 {
+        .#{'gut-m-'+ $gut} {
+            margin-left: -$gut + px;
+            margin-right: -$gut + px;
+        }   
+        .#{'gut-p-'+ $gut} {
+            padding-left: $gut + px;
+            padding-right: $gut + px;
+        }   
+    } 
+}
+@include setGutter;
 
 
 // Icons
@@ -46,19 +94,27 @@
 @mixin setPaddingAll {
     @for $size from 2 to 50 {
         .#{'p-' +  $size} {
-            padding: $size + px;
+            padding: $size + px !important;
+        }
+        .#{'p-h-' + $size} {
+            padding-left: $size + px !important;
+            padding-right: $size + px !important;
+        }
+        .#{'p-v-' + $size} {
+            padding-top: $size + px !important;
+            padding-bottom: $size + px !important;
         }
         .#{'p-r-' +  $size} {
-            padding-right: $size + px;
+            padding-right: $size + px !important;
         }
         .#{'p-l-' +  $size} {
-            padding-left: $size + px;
+            padding-left: $size + px !important;
         }
         .#{'p-t-' +  $size} {
-            padding-top: $size + px;
+            padding-top: $size + px !important;
         }
         .#{'p-b-' +  $size} {
-            padding-bottom: $size + px;
+            padding-bottom: $size + px !important;
         }
     } 
 }
@@ -68,19 +124,27 @@
 @mixin setMarginAll {
     @for $size from 2 to 50 {
         .#{'m-' +  $size} {
-            margin: $size + px;
+            margin: $size + px !important;
+        }
+        .#{'m-h-' + $size} {
+            margin-left: $size + px !important;
+            margin-right: $size + px !important; 
+        }
+        .#{'m-v-' + $size} {
+            margin-top: $size + px !important;
+            margin-bottom: $size + px !important;
         }
         .#{'m-r-' +  $size} {
-            margin-right: $size + px;
+            margin-right: $size + px !important; 
         }
         .#{'m-l-' +  $size} {
-            margin-left: $size + px;
+            margin-left: $size + px !important;
         }
         .#{'m-t-' +  $size} {
-            margin-top: $size + px;
+            margin-top: $size + px !important;
         }
         .#{'m-b-' +  $size} {
-            margin-bottom: $size + px;
+            margin-bottom: $size + px !important;
         } 
     } 
 }
@@ -141,3 +205,17 @@
 } 
 // Default ScrollBar
 @include SetScrollBar(defaultScrollbar, 10, #f1f1f1, #888, #555, 4, 4, 0);
+
+// Cursor 
+.cur-n {
+    cursor: none;
+}
+.cur-p {
+    cursor: pointer;
+}
+.cur-t {
+    cursor: text;
+}
+.cur-g {
+    cursor: grab;
+}

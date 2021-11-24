@@ -55,12 +55,27 @@ namespace EddieShop.Core.Interfaces.Base
         /// <summary>
         /// Lấy thông tin theo property
         /// </summary>
-        /// <param name="propName">Tên property</param>
-        /// <param name="propValue">Gía trị property</param>
+        /// <param name="columnsGet">Tên property</param>
         /// <returns></returns>
         /// CreatedBy: NTDUNG(27/8/2021)
         /// ModifiedBy: NTDUNG(27/8/2021)
-        TEntity GetEntityByProperty(string propName, object propValue);
+        TEntity GetEntityByProperties(object columnsGet);
+
+        /// <summary>
+        /// Lấy thông tin theo property
+        /// </summary>
+        /// <param name="columnsGet">Tên property</param>
+        /// <returns></returns>
+        /// CreatedBy: NTDUNG(27/8/2021)
+        List<TEntity> GetByValueColumns(TEntity columnsGet);
+
+        /// <summary>
+        /// Lấy theo các id 
+        /// </summary>
+        /// <param name="ids"></param>
+        /// <returns></returns>
+        /// CreatedBy: NTDUNG (24/11/2021)
+        List<TEntity> GetByIds(List<Guid> ids);
 
         /// <summary>
         /// Xóa nhiều 

@@ -6,8 +6,6 @@ import Popup from '@/common/popup.js'
 import Tooltip from '@/common/Tooltip.js'
 import Notify from '@/common/Notify.js'
 
-// Storage
-import Storage from '@/mixins/storage.js'
 // Account Auth
 import AccountAPI from '@/api/components/Account/AccountAPI.js'
 
@@ -17,7 +15,6 @@ Vue.prototype.$bus = EventBus;
 Vue.prototype.$popup = Popup;
 Vue.prototype.$tooltip = Tooltip;
 Vue.prototype.$notify = Notify;
-Vue.prototype.$storage = Storage;
 Vue.prototype.$account = AccountAPI;
 
 export default Vue;

@@ -1,45 +1,38 @@
-var routes = [
-  { path: "/", redirect: "home" },
+const routes = [
   {
     path: "/home",
     name: "Home",
     exact: true,
-    component: () =>
-      import(/* webPackChunkName: 'Home' */ "@/views/User/HomePage/HomePage.vue"),
+    component: () => import("@/views/User/HomePage/HomePage.vue"),
     meta: {
-      Title: "Home"
+      Title: "i18nMenu.Home"
     }
   },
   {
     path: "/order",
     name: "Order",
     exact: true,
-    component: () =>
-      import(/* webPackChunkName: 'Home' */ "@/views/User/Order/Order.vue"),
+    component: () => import("@/views/User/Order/Order.vue"),
     meta: {
-      Title: "Order"
+      Title: "i18nMenu.Order"
     }
   },
   {
     path: "/cart",
     name: "Cart",
     exact: true,
-    component: () =>
-      import(/* webPackChunkName: 'Home' */ "@/views/User/Cart/Cart.vue"),
+    component: () => import("@/views/User/Cart/Cart.vue"),
     meta: {
-      Title: "Cart"
+      Title: "i18nMenu.Cart"
     }
   },
   {
-    path: "/messageSignalR",
-    name: "SignalR",
+    path: "/messenger",
+    name: "Messenger",
     exact: true,
-    component: () =>
-      import(
-        /* webPackChunkName: 'Home' */ "@/views/User/MessageSignalR/MessageSignalR.vue"
-      ),
+    component: () => import("@/views/User/Messenger/Messenger.vue"),
     meta: {
-      Title: "MessageSignalR"
+      Title: "i18nMenu.Messenger"
     }
   }
 ]

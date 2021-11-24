@@ -1,27 +1,17 @@
 <template lang="">
   <div class="homepage">
-    <base-grid-product 
-      :title="$t('i18nProduct.Type.Hot')"
-      type="hot"
-      :products="products" />
   </div>
 </template>
 <script>
-import ProductAPI from "@/api/components/Product/ProductAPI.js";
-import BaseGridProduct from "@/components/BaseGridProduct/BaseGridProduct.vue";
 
 export default {
-  name: "HomePage",
-  components: {
-    BaseGridProduct
-  },
+  name: "HomePage", 
   data() {
     return {
       products: []
     };
   },
   mounted() {
-    this.getListProduct();
   },
   methods: {
     /**
@@ -49,6 +39,9 @@ export default {
         .catch(res => {
           console.log(res);
         });
+    }, 
+    login() {
+      this.$router.push('/login');
     }
   }
 };

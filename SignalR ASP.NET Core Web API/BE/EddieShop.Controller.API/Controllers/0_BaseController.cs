@@ -104,6 +104,112 @@ namespace EddieShop.Controller.API.Controllers
         }
         #endregion
 
+        #region GetByProperties
+        /// <summary>
+        /// Lấy thông tin theo Id
+        /// </summary>
+        /// <param name="columnsGet"></param>
+        /// <returns></returns>
+        /// CreatedBy: NTDUNG(23/11/2021)
+        [HttpPost("get-by-properties")]
+        public IActionResult GetByProperties(TEntity columnsGet)
+        {
+            try
+            {
+                var serviceResult = _baseService.GetByValueColumns(columnsGet);
+                if (serviceResult.Data != null)
+                {
+                    return StatusCode(200, serviceResult);
+                }
+                return StatusCode(204);
+            }
+            catch (Exception ex)
+            {
+                var errorObj = new ServiceResult();
+
+                errorObj.Success = false;
+                errorObj.Msg = ResourceVN.Exception_ErrorMsg;
+                errorObj.DevMsg = ex.Message;
+                errorObj.Code = "Eddie-001";
+                errorObj.MoreInfo = "https://openapi.Eddie.com.vn/errorcode/Eddie-001";
+                errorObj.TraceId = "ba9587fd-1a79-4ac5-a0ca-2c9f74dfd3fb";
+
+                return StatusCode(500, errorObj);
+            }
+
+        }
+        #endregion
+
+        #region GetByValueColumns
+        /// <summary>
+        /// Lấy thông tin theo Id
+        /// </summary>
+        /// <param name="columnsGet"></param>
+        /// <returns></returns>
+        /// CreatedBy: NTDUNG(23/11/2021)
+        [HttpPost("get-by-value-columns")]
+        public IActionResult GetByValueColumns(TEntity columnsGet)
+        {
+            try
+            {
+                var serviceResult = _baseService.GetByValueColumns(columnsGet);
+                if (serviceResult.Data != null)
+                {
+                    return StatusCode(200, serviceResult);
+                }
+                return StatusCode(204);
+            }
+            catch (Exception ex)
+            {
+                var errorObj = new ServiceResult();
+
+                errorObj.Success = false;
+                errorObj.Msg = ResourceVN.Exception_ErrorMsg;
+                errorObj.DevMsg = ex.Message;
+                errorObj.Code = "Eddie-001";
+                errorObj.MoreInfo = "https://openapi.Eddie.com.vn/errorcode/Eddie-001";
+                errorObj.TraceId = "ba9587fd-1a79-4ac5-a0ca-2c9f74dfd3fb";
+
+                return StatusCode(500, errorObj);
+            }
+        }
+        #endregion
+
+        #region GetByIds
+        /// <summary>
+        /// Lấy theo id
+        /// </summary>
+        /// <param name="ids"></param>
+        /// <returns></returns>
+        /// CreatedBy: NTDUNG (24/11/2021)
+        [HttpPost("get-by-ids")]
+        public IActionResult GetByIds(List<Guid> ids)
+        {
+            try
+            {
+                var serviceResult = _baseService.GetByIds(ids);
+                if (serviceResult.Data != null)
+                {
+                    return StatusCode(200, serviceResult);
+                }
+                return StatusCode(204);
+            }
+            catch (Exception ex)
+            {
+                var errorObj = new ServiceResult();
+
+                errorObj.Success = false;
+                errorObj.Msg = ResourceVN.Exception_ErrorMsg;
+                errorObj.DevMsg = ex.Message;
+                errorObj.Code = "Eddie-001";
+                errorObj.MoreInfo = "https://openapi.Eddie.com.vn/errorcode/Eddie-001";
+                errorObj.TraceId = "ba9587fd-1a79-4ac5-a0ca-2c9f74dfd3fb";
+
+                return StatusCode(500, errorObj);
+            }
+        }
+        #endregion
+
         #region Insert
         /// <summary>
         /// Thêm mới

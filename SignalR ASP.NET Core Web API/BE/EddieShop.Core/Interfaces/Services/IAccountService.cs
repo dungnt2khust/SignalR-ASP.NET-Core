@@ -11,10 +11,10 @@ namespace EddieShop.Core.Interfaces.Services
         /// Kiểm tra tài khoản đúng
         /// </summary>
         /// <param name="account"></param>
-        /// <param name="mode"></param>
         /// <returns></returns>
         /// CreatedBy: NTDUNG (15/11/2021)
-        ServiceResult checkValidAccount(Account account, string type);
+        /// ModifiedBy: NTDUNG (22/11/2021)
+        ServiceResult checkValidAccount(Account account);
 
         /// <summary>
         /// Kiểm tra sessionID

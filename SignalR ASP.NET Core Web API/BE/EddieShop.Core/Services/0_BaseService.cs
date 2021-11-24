@@ -75,6 +75,73 @@ namespace EddieShop.Core.Services
         }
         #endregion
 
+        #region GetByProperties
+        /// <summary>
+        /// Lấy dữ liệu theo thuộc tính
+        /// </summary>
+        /// <returns></returns>
+        /// CreatedBy: NTDUNG (23/11/2021)
+        public ServiceResult GetEntityByProperties(object columnsGet)
+        {
+            try
+            {
+                var serviceResult = new ServiceResult();
+                serviceResult.Data = _baseRepository.GetEntityByProperties(columnsGet);
+                return serviceResult;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+        #endregion
+
+        #region GetByValueColumns
+        /// <summary>
+        /// Lấy dữ liệu theo thuộc tính
+        /// </summary>
+        /// <returns></returns>
+        /// CreatedBy: NTDUNG (23/11/2021)
+        public ServiceResult GetByValueColumns(TEntity columnsGet)
+        {
+            try
+            {
+                var serviceResult = new ServiceResult();
+                serviceResult.Data = _baseRepository.GetByValueColumns(columnsGet);
+                return serviceResult;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+        #endregion
+
+        #region GetByIds
+        /// <summary>
+        /// Lấy theo các ids
+        /// </summary>
+        /// <param name="ids"></param>
+        /// <returns></returns>
+        /// CreatedBy: NTDUNG (24/11/2021)
+        public ServiceResult GetByIds(List<Guid> ids)
+        {
+            try
+            {
+                var serviceResult = new ServiceResult();
+                serviceResult.Data = _baseRepository.GetByIds(ids);
+                return serviceResult;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+        #endregion
+        
         #region Insert
         /// <summary>
         /// Thêm mới

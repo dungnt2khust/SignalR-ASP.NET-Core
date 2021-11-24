@@ -37,10 +37,9 @@ namespace EddieShop.Infrastructure.Repository
         /// Kiểm tra tài khoản hợp lệ
         /// </summary>
         /// <param name="account"></param>
-        /// <param name="type"></param>
         /// <returns></returns>
         /// CreatedBy: NTDUNG (15/11/2021)
-        public Object checkValidAccount(Account account, string type)
+        public Object checkValidAccount(Account account)
         {
             using (_dbConnection = new MySqlConnection(_connectionString))
             {
@@ -48,34 +47,35 @@ namespace EddieShop.Infrastructure.Repository
                 dynamicParameters.Add($"@Name", account.Name);
                 dynamicParameters.Add($"@PassWord", account.PassWord);
 
-                var tableName = "";
-                switch(type)
-                {
-                    case "Admin":
-                        tableName = "Admin";
-                        break;
-                    case "User":
-                        tableName = "User";
-                        break;
-                }
-                var sqlCommand = $"SELECT * FROM {tableName} WHERE Name = @Name AND PassWord = @PassWord";
-                var entity = _dbConnection.QueryFirstOrDefault<Account>(sqlCommand, param: dynamicParameters);
+                var sqlCommandAdmin = $"SELECT * FROM Admin WHERE Name = @Name AND PassWord = @PassWord";
+                var entityAdmin = _dbConnection.QueryFirstOrDefault<Admin>(sqlCommandAdmin, param: dynamicParameters);
 
-                if (entity == null)
-                {
-                    return new {
-                        ValidAccount = false,
-                        Msg = ResourceVN.Account_Invalid,
-                    };  
-                } else
+                var sqlCommandUser = $"SELECT * FROM User WHERE Name = @Name AND PassWord = @PassWord";
+                var entityUser = _dbConnection.QueryFirstOrDefault<User>(sqlCommandUser, param: dynamicParameters);
+
+                if (entityUser != null)
                 {
                     return new
                     {
-                        ValidAccount = true,
-                        Msg = ResourceVN.Account_Valid,
-                        SessionID = entity.SessionID
+                        AccountType = AccountType.USER,
+                        Data = entityUser,
+                        AccountId = entityUser.UserID
                     };
                 }
+                if (entityAdmin != null)
+                {
+                    return new
+                    {
+                        AccountType = AccountType.ADMIN,
+                        Data = entityAdmin,
+                        AccountId = entityAdmin.AdminID
+                    };
+                }
+                return new
+                {
+                    AccountType = AccountType.GUEST,
+                    Data = new { }
+                };
             }
         }
         #endregion
@@ -119,7 +119,7 @@ namespace EddieShop.Infrastructure.Repository
                 }
                 return new
                 {
-                    AccountType = AccountType.ADMIN,
+                    AccountType = AccountType.GUEST,
                     Data = new { }
                 };
             }

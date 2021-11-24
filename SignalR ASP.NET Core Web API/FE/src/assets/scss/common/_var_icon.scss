@@ -1,0 +1,23 @@
+// Gán thuộc tính theo các prefix khác nhau
+@mixin makeProperty($property, $value) {
+    @each $prefix in -webkit-, -moz-, -ms-, -o-, "" {
+        #{$prefix}#{$property}: value;
+    }
+}
+
+// Tạo class icon mới
+@mixin setIcon($iconName, $svgSource, $bgPosX, $bgPosY, $width, $height) {
+    .#{$iconName} {
+        background: $svgSource no-repeat $bgPosX $bgPosY;
+        width: $width;
+        height: $height;
+    }
+}
+
+$svgSource1: url('~@/assets/svg/Sprites.6114dba8.svg');
+
+@include setIcon(mi-uncheck, $svgSource1, -560px, -408px, 16px, 16px);
+@include setIcon(mi-check, $svgSource1, -512px, -408px, 16px, 16px);
+@include setIcon(mi-notify-white, $svgSource1, -257px, -88px, 22px, 25px);
+@include setIcon(mi-show, $svgSource1, -931px, -94px, 18px, 12px);
+@include setIcon(mi-hidden, $svgSource1, -987px, -92px, 18px, 16px);

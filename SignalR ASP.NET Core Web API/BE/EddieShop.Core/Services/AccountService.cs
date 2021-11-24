@@ -28,15 +28,15 @@ namespace EddieShop.Core.Services
         /// Kiểm tra tài khoản hợp lệ
         /// </summary>
         /// <param name="account"></param>
-        /// <param name="type"></param>
         /// <returns></returns>
         /// CreatedBy: NTDUNG (15/11/2021)
-        public ServiceResult checkValidAccount(Account account, string type)
+        /// ModifiedBy: NTDUNG (22/11/2021)
+        public ServiceResult checkValidAccount(Account account)
         {
             try
             {
                 var serviceResult = new ServiceResult();
-                serviceResult.Data = _accountRepository.checkValidAccount(account, type);
+                serviceResult.Data = _accountRepository.checkValidAccount(account);
                 return serviceResult;
             }
             catch (Exception)

@@ -30,15 +30,15 @@ namespace EddieShop.Controller.API.Controllers
         /// Kiểm tra tài khoản hợp lệ
         /// </summary>
         /// <param name="account"></param>
-        /// <param name="type"></param>
         /// <returns></returns>
         /// CreatedBy: NTDUNG (15/11/2021)
-        [HttpPost("{type}/check-valid-account")]
-        public IActionResult checkValidAccount([FromBody]Account account, string type)
+        /// ModifiedBy: NTDUNG (22/11/2021)
+        [HttpPost("check-valid-account")]
+        public IActionResult checkValidAccount([FromBody]Account account)
         {
             try
             {
-                var serviceResult = _accountService.checkValidAccount(account, type);
+                var serviceResult = _accountService.checkValidAccount(account);
                 //4.Trả về kết quả cho client
                 if (serviceResult.Success == true)
                 {

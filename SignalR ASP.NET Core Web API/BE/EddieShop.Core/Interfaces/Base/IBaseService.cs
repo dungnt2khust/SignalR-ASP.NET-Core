@@ -62,6 +62,32 @@ namespace EddieShop.Core.Interfaces.Base
         ServiceResult DeleteMultiple(List<Guid> entityIds);
 
         /// <summary>
+        /// Lấy thông tin theo property
+        /// </summary>
+        /// <param name="columnsGet">Tên property</param>
+        /// <returns></returns>
+        /// CreatedBy: NTDUNG(27/8/2021)
+        /// ModifiedBy: NTDUNG(27/8/2021)
+        ServiceResult GetEntityByProperties(object columnsGet);
+
+        /// <summary>
+        /// Lấy thông tin theo property
+        /// </summary>
+        /// <param name="columnsGet">Tên property</param>
+        /// <returns></returns>
+        /// CreatedBy: NTDUNG(27/8/2021)
+        /// ModifiedBy: NTDUNG(27/8/2021)
+        ServiceResult GetByValueColumns(TEntity columnsGet);
+
+        /// <summary>
+        /// Lấy theo các id
+        /// </summary>
+        /// <param name="ids"></param>
+        /// <returns></returns>
+        /// CreatedBy: NTDUNG (24/11/2021)
+        ServiceResult GetByIds(List<Guid> ids);
+
+        /// <summary>
         /// Validate data
         /// </summary>
         /// <param name="entity"></param>

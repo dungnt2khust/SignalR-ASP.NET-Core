@@ -1,45 +1,39 @@
 var routes = [
-  { path: "/", redirect: "/admin/home" },
+  { path: "/", redirect: "/admin/dashboard" },
   {
-    path: "/admin/home",
-    name: "AdminHome",
+    path: "/admin/dashboard",
+    name: "AdminDashboard",
     exact: true,
-    component: () =>
-      import(/* webPackChunkName: 'Home' */ "@/views/User/HomePage/HomePage.vue"),
+    component: () => import("@/views/Admin/Dashboard/Dashboard.vue"),
     meta: {
-      Title: "Home"
+      Title: "i18nMenu.Admin.Dashboard"
     }
   },
   {
     path: "/admin/order",
     name: "AdminOrder",
     exact: true,
-    component: () =>
-      import(/* webPackChunkName: 'Home' */ "@/views/User/Order/Order.vue"),
+    component: () => import("@/views/Admin/Order/Order.vue"),
     meta: {
-      Title: "Order"
+      Title: "i18nMenu.Order"
     }
   },
   {
-    path: "/admin/cart",
-    name: "AdminCart",
+    path: "/admin/product",
+    name: "AdminProduct",
     exact: true,
-    component: () =>
-      import(/* webPackChunkName: 'Home' */ "@/views/User/Cart/Cart.vue"),
+    component: () => import("@/views/Admin/Product/Product.vue"),
     meta: {
-      Title: "Cart"
+      Title: "i18nMenu.Product"
     }
   },
   {
-    path: "/admin/messageSignalR",
-    name: "admin/SignalR",
+    path: "/admin/push-notify",
+    name: "AdminPushNotify",
     exact: true,
-    component: () =>
-      import(
-        /* webPackChunkName: 'Home' */ "@/views/User/MessageSignalR/MessageSignalR.vue"
-      ),
+    component: () => import("@/views/Admin/PushNotify/PushNotify.vue"),
     meta: {
-      Title: "MessageSignalR"
+      Title: "i18nMenu.Admin.PushNotify"
     }
   } 
 ]

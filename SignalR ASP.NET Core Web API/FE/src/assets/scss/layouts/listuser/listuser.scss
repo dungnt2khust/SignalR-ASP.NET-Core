@@ -1,0 +1,19 @@
+.list-user {
+    height: 100%;
+    width: 100%;
+    background-color: #ddd;
+    .list-user__item {
+        border-radius: 8px;
+        height: 60px;
+        background-color: #fff;
+        color: #111;
+        font-family: Notosans-Semibold;
+        .list-user__code {
+            font-size: 16px;
+            white-space: nowrap;
+        }
+        .list-user__name {
+            font-size: 14px;
+        } 
+    }
+}

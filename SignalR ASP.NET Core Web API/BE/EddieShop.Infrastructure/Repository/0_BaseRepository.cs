@@ -74,24 +74,82 @@ namespace EddieShop.Infrastructure.Repository
         }
         #endregion
 
-        #region GetByProperty
+        #region GetByProperties
         /// <summary>
         /// Lấy thông tin theo property
         /// </summary>
-        /// <param name="propName">Tên property</param>
-        /// <param name="propValue">Gía trị property</param>
         /// <returns></returns>
-        /// CreatedBy: NTDUNG(19/8/2021)
-        /// ModifiedBy: NTDUNG(19/8/2021)
-        public TEntity GetEntityByProperty(string propName, object propValue)
+        /// CreatedBy: NTDUNG(23/11/2021)
+        public TEntity GetEntityByProperties(object columnsGet)
+        {
+            using (_dbConnection = new MySqlConnection(_connectionString))
+            { 
+                var queryLine = new List<string>();
+                DynamicParameters dynamicParameters = new DynamicParameters();
+                var properties = columnsGet.GetType().GetProperties();
+                foreach (var property in properties)
+                {
+                    var propName = property.Name;
+                    var propValue = property.GetValue(columnsGet); 
+
+                    queryLine.Add($"{propName} = @{propName}");
+                    dynamicParameters.Add($"@{propName}", propValue);
+                }
+
+                var sqlCommand = $"SELECT * FROM {_className} WHERE {String.Join(" AND ", queryLine.ToArray())} ";
+                var entity = _dbConnection.QueryFirstOrDefault<TEntity>(sqlCommand, param: dynamicParameters);
+                return entity;
+            }
+        }
+        #endregion
+
+        #region GetByValueColumns
+        /// <summary>
+        /// Lấy thông tin theo các cột có giá trị
+        /// </summary>
+        /// <returns></returns>
+        /// CreatedBy: NTDUNG(23/11/2021)
+        public List<TEntity> GetByValueColumns(TEntity columnsGet)
         {
             using (_dbConnection = new MySqlConnection(_connectionString))
             {
-                var sqlCommand = $"SELECT * from {_className} WHERE {propName} = @{propName}";
+                var queryLine = new List<string>();
                 DynamicParameters dynamicParameters = new DynamicParameters();
-                dynamicParameters.Add($"@{propName}", propValue);
-                var entity = _dbConnection.QueryFirstOrDefault<TEntity>(sqlCommand, param: dynamicParameters);
-                return entity;
+                var properties = columnsGet.GetType().GetProperties();
+                foreach (var property in properties)
+                {
+                    var propName = property.Name;
+                    var propValue = property.GetValue(columnsGet, null);
+                    if (propValue != null)
+                    {
+                        queryLine.Add($"{propName} = @{propName}");
+                        dynamicParameters.Add($"@{propName}", propValue);
+                    }
+                }
+
+                var sqlCommand = $"SELECT * FROM {_className} WHERE {String.Join(" AND ", queryLine.ToArray())} ";
+                var entity = _dbConnection.Query<TEntity>(sqlCommand, param: dynamicParameters);
+                return entity.ToList();
+            }
+        }
+        #endregion
+
+        #region GetByIds
+        /// <summary>
+        /// Lấy theo các id
+        /// </summary>
+        /// <param name="ids"></param>
+        /// <returns></returns>
+        /// CreatedBy: NTDUNG (24/11/2021)
+        public List<TEntity> GetByIds(List<Guid> ids)
+        {
+            using (_dbConnection = new MySqlConnection(_connectionString))
+            {
+                DynamicParameters dynamicParameters = new DynamicParameters();
+                var listIds = ids.Select(id => $"'{id}'").ToList();
+                var sqlCommand = $"SELECT * FROM {_className} WHERE {_className}ID IN ({String.Join(", ", listIds)})";
+                var entity = _dbConnection.Query<TEntity>(sqlCommand, param: dynamicParameters);
+                return entity.ToList();
             }
         }
         #endregion

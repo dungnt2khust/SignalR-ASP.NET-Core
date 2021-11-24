@@ -117,5 +117,5 @@ export default {
 };
 </script>
 <style lang="scss">
-@import "@/assets/scss/components/base/BaseGridProduct/basegridproduct.scss";
+@import "@/assets/scss/layouts/basegridproduct/basegridproduct.scss";
 </style>

@@ -15,13 +15,15 @@ namespace EddieShop.Controller.API.Hubs
     {
         #region Declare
         IBaseService<User> _userService;
+        IBaseRepository<User> _userRepository;
         IBaseService<Admin> _adminService;
         #endregion
 
         #region Contructor
-        public SignalRHub(IBaseService<User> userService, IBaseService<Admin> adminService)
+        public SignalRHub(IBaseService<User> userService, IBaseService<Admin> adminService, IBaseRepository<User> userRepository)
         {
             _userService = userService;
+            _userRepository = userRepository;
             _adminService = adminService;
         }
         #endregion
@@ -76,26 +78,66 @@ namespace EddieShop.Controller.API.Hubs
             return serviceResult;
         }
         #endregion
-
-
-        public async Task SendMessage(string user, string message, int userID)
-        {
-            await Clients.All.SendAsync("ReceiveMessage", user, message, userID, Context.ConnectionId);
-        }
-        public async Task SendMessageToSpecialUser(string connectionID, string message)
-        {
-            await Clients.Client(connectionID).SendAsync("ReceiveMessageAdmin", connectionID, message);
-        }
-
+        
+        #region SendMessageToSpecialUser
         /// <summary>
-        /// Lấy connectionID
+        /// Gửi tin nhắn đến user 
         /// </summary>
+        /// <param name="username"></param>
+        /// <param name="message"></param>
+        /// <param name="connectionId"></param>
         /// <returns></returns>
-        /// CreatedBy: NTDUNG (14/11/2021)
-        public string GetConnectionID()
+        public async Task SendMessageToSpecialUser(User userSent, string userName, string message)
         {
-            return Context.ConnectionId;
+            // Lấy connectionid của username truyền lên
+            var userQuery = new User();
+            userQuery.Name = userName;
+            IEnumerable<User> users = _userRepository.GetByValueColumns(userQuery);
+            if (users != null)
+            {
+                IReadOnlyList<string> userConnectionIDs = users.Select(user => user.ConnectionID).ToList().AsReadOnly();
+                await Clients.Clients(userConnectionIDs).SendAsync("ReceiveMessage", userSent, message);
+            }
+            else 
+                await Clients.Client(userSent.ConnectionID).SendAsync("Result", message);
         }
+        #endregion
+
+        #region SendMessageToUsers
+        /// <summary>
+        /// Gửi tin nhắn đến người dùng
+        /// </summary>
+        /// <param name="userSent"></param>
+        /// <param name="usersReceive"></param>
+        /// <param name="message"></param>
+        /// <returns></returns>
+        /// CreatedBy: NTDUNG (24/11/2021)
+        public async Task SendMessageToUsers(User userSent, List<Guid> userReceiveIDs, string message)
+        {
+            IReadOnlyList<string> connectionIDs;
+            List<User> userReceives = _userRepository.GetByIds(userReceiveIDs);
+            connectionIDs = userReceives.Select(user => user.ConnectionID).ToList().AsReadOnly();
+            await Clients.Clients(connectionIDs).SendAsync("ReceiveMessage", userSent, message);
+        }
+        #endregion
+
+        #region SendNotifyToUsers
+        /// <summary>
+        /// Gửi tin nhắn đến người dùng
+        /// </summary>
+        /// <param name="userSent"></param>
+        /// <param name="usersReceive"></param>
+        /// <param name="notify"></param>
+        /// <returns></returns>
+        /// CreatedBy: NTDUNG (24/11/2021)
+        public async Task SendNotifyToUsers(User userSent, List<Guid> userReceiveIDs, object notify)
+        {
+            IReadOnlyList<string> connectionIDs;
+            List<User> userReceives = _userRepository.GetByIds(userReceiveIDs);
+            connectionIDs = userReceives.Select(user => user.ConnectionID).ToList().AsReadOnly();
+            await Clients.Clients(connectionIDs).SendAsync("ReceiveNotify", userSent, notify);
+        }
+        #endregion
 
         //public override Task OnDisconnected(bool stopCalled)
         //{

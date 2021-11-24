@@ -5,14 +5,14 @@ $color: rgba(255,255,255, 0.9);
     display: flex;
     align-items: center;
     padding: 10px;
+    font-size: 40px;
     .logo__icon {
-        font-size: 40px;
         margin-right: 10px;
+        font-size: inherit;
     }
     .logo__shop-name {
         font-family: SquidGame;
-        font-size: 40px;
-        letter-spacing: 2px;
-        
+        letter-spacing: 2px; 
+        font-size: inherit;
     }
 }

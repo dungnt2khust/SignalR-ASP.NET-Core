@@ -1,0 +1,13 @@
+.list-notify {
+    .list-notify__item {
+        margin-top: 8px;
+        height: 60px;
+        border-bottom: 1px solid #ccc;
+        .list-notify__title {
+            font-family: Notosans-Semibold;
+        }
+        .list-notify__content {
+            font-size: 14px; 
+        }
+    }
+}

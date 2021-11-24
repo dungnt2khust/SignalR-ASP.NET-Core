@@ -11,7 +11,6 @@ Vue.use(Router)
 export default new Router({
     mode: "history",
     routes: [
-        {path: '/login', component: () => import('@/views/Authen/Login/Login.vue')},
         ...Authen,
         ...User,
         ...Admin

@@ -2,33 +2,33 @@ const routes = [
     {
         path: '/login',
         name: "Login",
-        component: () => import ( /* webPackChunkName: 'Home' */ "@/views/Authen/Login/Login.vue"),
+        component: () => import ("@/views/Authen/Login/Login.vue"),
         meta: {
-            Title: "Login"
+            Title: "i18nMenu.Authen.Login"
         }
     },
     {
         path: '/register',
         name: "Register",
-        component: () => import ( /* webPackChunkName: 'Home' */ "@/views/Authen/Register/Register.vue"),
+        component: () => import ("@/views/Authen/Register/Register.vue"),
         meta: {
-            Title: "Register"
+            Title: "i18nMenu.Authen.Register"
         }
     },
     {
         path: '/no-permission',
         name: "NoPermision",
-        component: () => import ( /* webPackChunkName: 'Home' */ "@/views/Authen/NoPermission/NoPermission.vue"),
+        component: () => import ("@/views/Authen/NoPermission/NoPermission.vue"),
         meta: {
-            Title: "NoPermission"
+            Title: "i18nMenu.Authen.NoPermission"
         }
     },
     {
         path: '/not-found',
         name: "NotFound",
-        component: () => import ( /* webPackChunkName: 'Home' */ "@/views/Authen/NotFound/NotFound.vue"),
+        component: () => import ("@/views/Authen/NotFound/NotFound.vue"),
         meta: {
-            Title: "NotFound"
+            Title: "i18nMenu.Authen.NotFound"
         }
     }
 ];

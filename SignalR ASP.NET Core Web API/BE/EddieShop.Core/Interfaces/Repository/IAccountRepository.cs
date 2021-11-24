@@ -11,10 +11,10 @@ namespace EddieShop.Core.Interfaces.Repository
         /// Kiểm tra tài khoản hợp lệ
         /// </summary>
         /// <param name="account"></param>
-        /// <param name="mode"></param>
         /// <returns></returns>
         /// CreatedBy: NTDUNG (15/11/2021)
-        Object checkValidAccount(Account account, string type);
+        /// ModifiedBy: NTDUNG (22/11/2021)
+        Object checkValidAccount(Account account);
 
         /// <summary>
         /// Kiểm tra sessionID có hợp lệ không

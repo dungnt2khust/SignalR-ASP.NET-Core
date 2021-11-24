@@ -38,14 +38,13 @@ namespace EddieShop.Controller.API
             services.AddCors(o => o.AddPolicy("MyPolicy", builder =>
             {
                 // Access cors gọi api bình thường
-                builder.AllowAnyOrigin()
+                builder.WithOrigins("https://localhost/8080")
                        .AllowAnyMethod()
                        .AllowAnyHeader()
+                       .AllowCredentials()
                        .SetIsOriginAllowed((host) => true);
 
                 // Access cors kết nối client 
-                builder.WithOrigins("https://localhost/8080")
-                        .AllowCredentials();
             }));
             services.AddSwaggerGen(c =>
             {
@@ -95,8 +94,12 @@ namespace EddieShop.Controller.API
             {
                 app.UseDeveloperExceptionPage();
             }
+            else
+            {
+                app.UseHsts();
+            }
 
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
 
             //app.UseAuthorization();
             app.UseCors("MyPolicy");
@@ -110,8 +113,6 @@ namespace EddieShop.Controller.API
             {
                 routes.MapHub<SignalRHub>("/hub/chat");
             });
-
-            app.UseHttpsRedirection();
         }
     }
 }
